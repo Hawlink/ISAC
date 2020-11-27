@@ -1,3 +1,8 @@
 <resources>
     <string name="app_name">CODE_P25</string>
+    <string name="stats">STATISTIQUES</string>
+    <string name="leave">QUITTER</string>
+    <string name="runnerCreation">CREER COUREUR</string>
+    <string name="raceCreation">CREER COURSE</string>
+    <string name="codep25">CODEP25</string>
 </resources>
