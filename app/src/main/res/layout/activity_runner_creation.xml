@@ -5,7 +5,7 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:background="#70ad46"
-    tools:context=".MainActivity">
+    tools:context=".RunnerCreationActivity">
 
     <LinearLayout
         android:weightSum="100"
@@ -30,10 +30,36 @@
                 android:layout_marginEnd="20dp"
                 android:gravity="center"/>
 
-            <ImageView
-                android:src="@drawable/skz_logo"
-                android:layout_height="75dp"
+            <TextView
+                style="@style/textView"
+                android:layout_marginEnd="20dp"
+                android:text="@string/newRunner" />
+
+        </LinearLayout>
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_weight="33"
+            android:paddingTop="95dp"
+            android:paddingStart="250dp"
+            android:paddingEnd="250dp"
+            android:orientation="horizontal" >
+
+            <EditText
+                android:id="@+id/firstName"
+                style="@style/editText"
+                android:text="@string/firstName" />
+
+            <EditText
+                android:id="@+id/lastName"
+                style="@style/editText"
+                android:text="@string/lastName" />
+
+            <NumberPicker
+                android:id="@+id/levelPicker"
                 android:layout_width="150dp"
+                android:layout_height="75dp"
                 android:layout_marginEnd="20dp" />
 
         </LinearLayout>
@@ -43,43 +69,15 @@
             android:layout_height="wrap_content"
             android:layout_weight="33"
             android:paddingTop="95dp"
-            android:paddingStart="330dp"
+            android:paddingStart="420dp"
             android:paddingEnd="330dp"
             android:orientation="horizontal" >
-
-            <Button
-                android:id="@+id/raceCreation"
-                style="@style/mainActivityButton"
-                android:text="@string/raceCreation"
-                android:onClick="onRaceCreationClick"/>
-
-            <Button
-                android:id="@+id/runnerCreation"
-                style="@style/mainActivityButton"
-                android:text="@string/runnerCreation"
-                android:onClick="onRunnerCreationClick"/>
-
-        </LinearLayout>
-
-        <LinearLayout
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:layout_weight="33"
-            android:paddingTop="95dp"
-            android:paddingStart="330dp"
-            android:paddingEnd="330dp"
-            android:orientation="horizontal" >
-
-            <Button
-                android:id="@+id/statistics"
-                style="@style/mainActivityButton"
-                android:text="@string/stats" />
 
             <Button
                 android:id="@+id/leave"
-                style="@style/mainActivityButton"
-                android:text="@string/leave"
-                android:onClick="closeApp"/>
+                android:layout_height="75dp"
+                android:layout_width="150dp"
+                android:text="@string/validate" />
 
         </LinearLayout>
 

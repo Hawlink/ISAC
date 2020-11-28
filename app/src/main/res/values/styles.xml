@@ -12,4 +12,16 @@
         <item name="android:layout_width">150dp</item>
         <item name="android:layout_marginEnd">20dp</item>
     </style>
+
+    <style name="editText" parent="@style/Widget.AppCompat.EditText">
+        <item name="android:layout_height">75dp</item>
+        <item name="android:layout_width">150dp</item>
+        <item name="android:layout_marginEnd">20dp</item>
+    </style>
+
+    <style name="textView" parent="@style/Widget.AppCompat.TextView">
+        <item name="android:layout_height">75dp</item>
+        <item name="android:layout_width">150dp</item>
+    </style>
+
 </resources>

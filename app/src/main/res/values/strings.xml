@@ -5,4 +5,27 @@
     <string name="runnerCreation">CREER COUREUR</string>
     <string name="raceCreation">CREER COURSE</string>
     <string name="codep25">CODEP25</string>
+    <string name="newRunner">NOUVEAU COUREUR</string>
+    <string name="firstName">PRENOM</string>
+    <string name="lastName">NOM</string>
+    <string name="validate">VALIDER</string>
+    <string name="level">NIVEAU</string>
+    <string name="newRace">NOUVELLE COURSE</string>
+    <string name="runnersList">LISTE COUREURS</string>
+    <string name="participants">PARTICIPANTS</string>
+    <string name="runners">COUREURS</string>
+    <string-array name="loona">
+        <item>Heejin</item>
+        <item>Hyunjin</item>
+        <item>HaSeul</item>
+        <item>Yeojin</item>
+        <item>Vivi</item>
+        <item>Kim Lip</item>
+        <item>JinSoul</item>
+        <item>Choerry</item>
+        <item>Yves</item>
+        <item>Chuu</item>
+        <item>Go Won</item>
+        <item>Olivia Hye</item>
+    </string-array>
 </resources>
