@@ -11,6 +11,12 @@
         <item name="android:layout_height">75dp</item>
         <item name="android:layout_width">150dp</item>
         <item name="android:layout_marginEnd">20dp</item>
+        <item name="android:background">@drawable/rounded_button</item>
+        <item name="android:textColor">@color/colorButtonText</item>
+        <item name="android:shadowColor">@color/colorButtonShadow</item>
+        <item name="android:shadowDx">3</item>
+        <item name="android:shadowDy">3</item>
+        <item name="android:shadowRadius">3</item>
     </style>
 
     <style name="editText" parent="@style/Widget.AppCompat.EditText">

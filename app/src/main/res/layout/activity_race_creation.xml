@@ -124,6 +124,7 @@
                 android:id="@+id/leave"
                 android:layout_height="75dp"
                 android:layout_width="150dp"
+                style="@style/mainActivityButton"
                 android:text="@string/validate" />
 
         </LinearLayout>
