@@ -42,6 +42,9 @@ public class Runner {
         return niveau;
     }
 
-
+    @Override
+    public String toString() {
+        return this.firstName + " " + this.lastName + " " + this.niveau;
+    }
 
 }

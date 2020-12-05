@@ -5,7 +5,7 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:background="#70ad46"
-    tools:context=".RunnerCreationActivity">
+    tools:context=".TeamsActivity">
 
     <LinearLayout
         android:weightSum="100"
@@ -33,7 +33,7 @@
             <TextView
                 style="@style/textView"
                 android:layout_marginEnd="20dp"
-                android:text="@string/newRunner" />
+                android:text="@string/teamsList" />
 
         </LinearLayout>
 
@@ -42,25 +42,23 @@
             android:layout_height="wrap_content"
             android:layout_weight="33"
             android:paddingTop="95dp"
-            android:paddingStart="250dp"
-            android:paddingEnd="250dp"
+            android:paddingStart="330dp"
+            android:paddingEnd="330dp"
             android:orientation="horizontal" >
 
-            <EditText
-                android:id="@+id/firstName"
-                style="@style/editText"
-                android:text="@string/firstName" />
-
-            <EditText
-                android:id="@+id/lastName"
-                style="@style/editText"
-                android:text="@string/lastName" />
-
-            <NumberPicker
-                android:id="@+id/levelPicker"
+            <Spinner
+                android:id="@+id/teams"
                 android:layout_width="150dp"
                 android:layout_height="75dp"
-                android:layout_marginEnd="20dp" />
+                android:layout_marginEnd="20dp"
+                android:text = "@string/teams"/>
+
+            <Button
+                android:id="@+id/consult"
+                android:layout_height="75dp"
+                android:layout_width="150dp"
+                style="@style/mainActivityButton"
+                android:text="@string/consulter" />
 
         </LinearLayout>
 
@@ -78,8 +76,7 @@
                 android:layout_height="75dp"
                 android:layout_width="150dp"
                 style="@style/mainActivityButton"
-                android:text="@string/validate"
-                android:onClick="validateRunner"/>
+                android:text="@string/startRace" />
 
         </LinearLayout>
 

@@ -6,6 +6,7 @@ import androidx.room.Database;
 import androidx.room.Room;
 import androidx.room.RoomDatabase;
 
+import utbm.lepysidawy.code_p25.dao.RaceDAO;
 import utbm.lepysidawy.code_p25.dao.RunnerDAO;
 import utbm.lepysidawy.code_p25.entity.Runner;
 

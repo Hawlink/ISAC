@@ -14,6 +14,10 @@
     <string name="runnersList">LISTE COUREURS</string>
     <string name="participants">PARTICIPANTS</string>
     <string name="runners">COUREURS</string>
+    <string name="teamsList">LISTE DES EQUIPES</string>
+    <string name="consulter">CONSULTER</string>
+    <string name="startRace">DEBUTER COURSE</string>
+    <string name="teams">EQUIPES</string>
     <string-array name="loona">
         <item>Heejin</item>
         <item>Hyunjin</item>

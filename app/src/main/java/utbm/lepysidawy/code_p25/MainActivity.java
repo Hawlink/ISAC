@@ -34,7 +34,14 @@ public class MainActivity extends AppCompatActivity {
 
         Runner wonho = new Runner(1,"Lee","Ho-seok",80);
         Runner yeojin = new Runner(2,"Lim","Yeojin",40);
-        db.runnerDAO().insertAll(wonho,yeojin);
+        Runner heejin = new Runner(3,"Jeon","Heejin",90);
+        Runner hyunjin = new Runner(4,"Kim","Hyunjin",95);
+        Runner haseul = new Runner(5,"Cho","Haseul",70);
+        Runner vivi = new Runner(6,"Wong","Ka-Hei",20);
+        Runner yves = new Runner(7,"Ha","Soo Young",75);
+        Runner chuu = new Runner(8,"Kim","Jiwoo",80);
+        Runner choerry = new Runner(9,"Choi","Yerim",78);
+        db.runnerDAO().insertAll(wonho,yeojin,heejin, hyunjin, haseul, vivi, yves, chuu, choerry);
 
     }
 
