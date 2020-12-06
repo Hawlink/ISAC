@@ -1,7 +1,6 @@
 package utbm.lepysidawy.code_p25;
 
 import androidx.appcompat.app.AppCompatActivity;
-import utbm.lepysidawy.code_p25.entity.Team;
 
 import android.os.Bundle;
 import android.widget.Spinner;
