@@ -67,7 +67,7 @@
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:layout_weight="40"
-            android:paddingTop="95dp"
+            android:paddingTop="70dp"
             android:paddingStart="250dp"
             android:paddingEnd="250dp"
             android:orientation="horizontal" >
@@ -89,7 +89,7 @@
                     android:src="@drawable/plus_button"
                     android:layout_height="25dp"
                     android:layout_width="150dp"
-                    android:layout_marginBottom="20dp"
+                    android:layout_marginBottom="10dp"
                     android:onClick="onPlusClick"/>
 
                 <ImageView
@@ -116,7 +116,7 @@
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:layout_weight="20"
-            android:paddingTop="95dp"
+            android:paddingTop="50dp"
             android:paddingStart="420dp"
             android:paddingEnd="330dp"
             android:orientation="horizontal" >

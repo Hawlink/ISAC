@@ -4,7 +4,7 @@ import androidx.room.ColumnInfo;
 import androidx.room.Entity;
 import androidx.room.ForeignKey;
 
-@Entity(primaryKeys = {"ID_RACE","ID_RUNNER"}, foreignKeys = {@ForeignKey(entity = Race.class, parentColumns = "idRace", childColumns = "ID_RACE"), @ForeignKey(entity = Runner.class, parentColumns = "idRunner", childColumns = "ID_RUNNER")})
+@Entity(primaryKeys = {"ID_RACE","ID_RUNNER"}, foreignKeys = {@ForeignKey(entity = Race.class, parentColumns = "idRace", childColumns = "ID_RACE"), @ForeignKey(entity = Runner.class, parentColumns = "idPlayer", childColumns = "ID_RUNNER")})
 public class ParticipateRace {
 
     @ColumnInfo(name = "ID_RACE")
@@ -104,4 +104,5 @@ public class ParticipateRace {
     public void setObstacle2(float obstacle2) {
         this.obstacle2 = obstacle2;
     }
+
 }

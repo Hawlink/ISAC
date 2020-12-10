@@ -15,6 +15,9 @@ public interface RunnerDAO {
     @Query("SELECT * FROM Runner")
     List<Runner> getAll();
 
+    @Query("SELECT * FROM Runner WHERE Runner.idPlayer = :runnerId")
+    Runner getRunnerFromId(int runnerId);
+
     @Query("SELECT * FROM Runner WHERE LEVEL > 50")
     List<Runner> queryTest();
 

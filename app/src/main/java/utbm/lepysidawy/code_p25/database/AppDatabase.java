@@ -6,13 +6,18 @@ import androidx.room.Database;
 import androidx.room.Room;
 import androidx.room.RoomDatabase;
 
+import utbm.lepysidawy.code_p25.dao.ParticipateRaceDAO;
 import utbm.lepysidawy.code_p25.dao.RaceDAO;
 import utbm.lepysidawy.code_p25.dao.RunnerDAO;
+import utbm.lepysidawy.code_p25.entity.ParticipateRace;
+import utbm.lepysidawy.code_p25.entity.Race;
 import utbm.lepysidawy.code_p25.entity.Runner;
 
-@Database(entities = {Runner.class}, version = 1)
+@Database(entities = {Runner.class, Race.class, ParticipateRace.class}, version = 3)
 public abstract class AppDatabase extends RoomDatabase {
     public abstract RunnerDAO runnerDAO();
+    public abstract RaceDAO raceDAO();
+    public abstract ParticipateRaceDAO participateRaceDAO();
 
     private static AppDatabase instance;
 

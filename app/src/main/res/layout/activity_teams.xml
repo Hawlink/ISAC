@@ -58,6 +58,7 @@
                 android:layout_height="75dp"
                 android:layout_width="150dp"
                 style="@style/mainActivityButton"
+                android:onClick="consultTeam"
                 android:text="@string/consulter" />
 
         </LinearLayout>
@@ -76,7 +77,8 @@
                 android:layout_height="75dp"
                 android:layout_width="150dp"
                 style="@style/mainActivityButton"
-                android:text="@string/startRace" />
+                android:text="@string/startRace"
+                android:onClick="startRace"/>
 
         </LinearLayout>
 

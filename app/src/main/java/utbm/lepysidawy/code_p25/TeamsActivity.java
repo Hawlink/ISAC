@@ -1,8 +1,12 @@
 package utbm.lepysidawy.code_p25;
 
 import androidx.appcompat.app.AppCompatActivity;
+import utbm.lepysidawy.code_p25.database.AppDatabase;
 
+import android.content.Intent;
 import android.os.Bundle;
+import android.view.View;
+import android.widget.ArrayAdapter;
 import android.widget.Spinner;
 
 import java.util.ArrayList;
@@ -14,12 +18,19 @@ import java.util.ArrayList;
 public class TeamsActivity extends AppCompatActivity {
 
     private Spinner teams;
+    private ArrayAdapter<String> teamsAdapter;
+    private int raceId;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_teams);
-        this.teams = (Spinner) findViewById(R.id.runners);
+        this.teams = (Spinner) findViewById(R.id.teams);
+        Bundle b = getIntent().getExtras();
+        this.raceId = -1; // or other values
+        if(b != null) {
+            this.raceId = b.getInt("raceId");
+        }
         this.initializeTeams();
     }
 
@@ -27,6 +38,43 @@ public class TeamsActivity extends AppCompatActivity {
      * Method used to initialize the different teams of the race
      */
     public void initializeTeams() {
-        ArrayList<CharSequence> teams = new ArrayList<>();
+        AppDatabase db = AppDatabase.getInstance(this);
+        int teamsNumber = db.participateRaceDAO().getTeamsNumber(raceId);
+        ArrayList<String> teams = new ArrayList<>();
+        for(int i = 0; i < teamsNumber; i++) {
+            teams.add("Equipe " + String.valueOf(i+1));
+        }
+        this.teamsAdapter = new ArrayAdapter<String>(
+                this,
+                android.R.layout.simple_spinner_dropdown_item,
+                teams);
+        this.teams.setAdapter(this.teamsAdapter);
+    }
+
+    /**
+     * Method used to consult the members of a team
+     * Opens TeamActivity
+     * @param view
+     */
+    public void consultTeam(View view) {
+        int teamNumber = Character.getNumericValue(this.teams.getSelectedItem().toString().charAt(this.teams.getSelectedItem().toString().length() - 1));
+        Intent intent = new Intent(this, TeamActivity.class);
+        Bundle b = new Bundle();
+        b.putInt("raceId", this.raceId);
+        b.putInt("teamNumber", teamNumber);
+        intent.putExtras(b);
+        startActivity(intent);
+    }
+
+    /**
+     * Method used to start a race
+     * @param view
+     */
+    public void startRace(View view) {
+        Intent intent = new Intent(this, RaceActivity.class);
+        Bundle b = new Bundle();
+        b.putInt("raceId", this.raceId);
+        intent.putExtras(b);
+        startActivity(intent);
     }
 }

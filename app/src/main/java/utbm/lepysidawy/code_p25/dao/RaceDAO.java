@@ -15,6 +15,9 @@ public interface RaceDAO {
     @Query("SELECT * FROM Race")
     List<Race> getAll();
 
+    @Query("SELECT RACE.NAME FROM Race WHERE RACE.idRace = :raceId")
+    String getRaceName(int raceId);
+
     @Insert
     void insert(Race race);
 

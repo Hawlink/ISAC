@@ -18,6 +18,12 @@
     <string name="consulter">CONSULTER</string>
     <string name="startRace">DEBUTER COURSE</string>
     <string name="teams">EQUIPES</string>
+    <string name="runner_2">COUREUR 2</string>
+    <string name="runner_1">COUREUR 1</string>
+    <string name="runner_3">COUREUR 3</string>
+    <string name="validate_team">VALIDER EQUIPE</string>
+    <string name="courseName">NOM COURSE</string>
+    <string name="counter">00:00:00</string>
     <string-array name="loona">
         <item>Heejin</item>
         <item>Hyunjin</item>

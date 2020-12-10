@@ -10,6 +10,8 @@ import android.view.View;
 import java.util.List;
 
 import utbm.lepysidawy.code_p25.database.AppDatabase;
+import utbm.lepysidawy.code_p25.entity.ParticipateRace;
+import utbm.lepysidawy.code_p25.entity.Race;
 import utbm.lepysidawy.code_p25.entity.Runner;
 
 /**
@@ -26,10 +28,19 @@ public class MainActivity extends AppCompatActivity {
         AppDatabase db = AppDatabase.getInstance(this);
         Log.d("App","Running");
 
+        List<ParticipateRace> participations = db.participateRaceDAO().getAll();
+        for(ParticipateRace p : participations){
+            db.participateRaceDAO().delete(p);
+        }
 
         List<Runner> runners = db.runnerDAO().getAll();
         for(Runner r : runners){
             db.runnerDAO().delete(r);
+        }
+
+        List<Race> races = db.raceDAO().getAll();
+        for(Race r : races){
+            db.raceDAO().delete(r);
         }
 
         Runner wonho = new Runner(1,"Lee","Ho-seok",80);
@@ -42,7 +53,6 @@ public class MainActivity extends AppCompatActivity {
         Runner chuu = new Runner(8,"Kim","Jiwoo",80);
         Runner choerry = new Runner(9,"Choi","Yerim",78);
         db.runnerDAO().insertAll(wonho,yeojin,heejin, hyunjin, haseul, vivi, yves, chuu, choerry);
-
     }
 
     public void onRaceCreationClick(View view) {

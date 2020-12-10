@@ -1,0 +1,35 @@
+package utbm.lepysidawy.code_p25.dao;
+
+import java.util.List;
+
+import androidx.room.Dao;
+import androidx.room.Delete;
+import androidx.room.Insert;
+import androidx.room.Query;
+import utbm.lepysidawy.code_p25.entity.ParticipateRace;
+
+@Dao
+public interface ParticipateRaceDAO {
+
+    @Query("SELECT * FROM ParticipateRace")
+    List<ParticipateRace> getAll();
+
+    @Query("SELECT * FROM ParticipateRace WHERE ParticipateRace.ID_RACE = :raceId AND ParticipateRace.TEAM_NUMBER = :teamNumber")
+    List<ParticipateRace> getParticipationsFromCourseAndTeamNumber(int raceId, int teamNumber);
+
+    @Query("SELECT COUNT(DISTINCT ParticipateRace.TEAM_NUMBER) FROM ParticipateRace WHERE ParticipateRace.ID_RACE = :raceId")
+    int getTeamsNumber(int raceId);
+
+    @Query("UPDATE ParticipateRace SET RUNNING_ORDER = :runningOrder WHERE ID_RACE = :raceId AND ID_RUNNER = :runnerId")
+    int updateRunningOrder(int raceId, int runnerId, int runningOrder);
+
+    @Insert
+    void insert(ParticipateRace participation);
+
+    @Insert
+    void insertAll(ParticipateRace... participation);
+
+    @Delete
+    void delete(ParticipateRace participation);
+
+}

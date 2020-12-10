@@ -3,9 +3,12 @@ package utbm.lepysidawy.code_p25;
 import androidx.appcompat.app.AlertDialog;
 import androidx.appcompat.app.AppCompatActivity;
 import utbm.lepysidawy.code_p25.database.AppDatabase;
+import utbm.lepysidawy.code_p25.entity.ParticipateRace;
+import utbm.lepysidawy.code_p25.entity.Race;
 import utbm.lepysidawy.code_p25.entity.Runner;
 
 import android.content.DialogInterface;
+import android.content.Intent;
 import android.os.Bundle;
 import android.view.View;
 import android.widget.ArrayAdapter;
@@ -14,6 +17,7 @@ import android.widget.Spinner;
 
 import java.util.ArrayList;
 import java.util.List;
+import java.util.Random;
 
 /**
  * In this activity, the user can create a race
@@ -67,38 +71,42 @@ public class RaceCreationActivity extends AppCompatActivity {
      * CAN BE IMPROVED BY USING A CUSTOM SUBCLASS OF ARRAYADAPTER TO STORE THE LIST
      */
     public void onPlusClick(View view) {
-        Runner currentElement = (Runner)runners.getSelectedItem();
-        this.participantsList.add(currentElement);
-        this.participantsAdapter = new ArrayAdapter<>(
-                this,
-                android.R.layout.simple_spinner_dropdown_item,
-                this.participantsList);
-        this.participants.setAdapter(this.participantsAdapter);
-        this.runnersList.remove(currentElement);
-        this.runnersAdapter = new ArrayAdapter<>(
-                this,
-                android.R.layout.simple_spinner_dropdown_item,
-                this.runnersList);
-        this.runners.setAdapter(this.runnersAdapter);
+        if (this.runners.getSelectedItem() != null) {
+            Runner currentElement = (Runner)runners.getSelectedItem();
+            this.participantsList.add(currentElement);
+            this.participantsAdapter = new ArrayAdapter<>(
+                    this,
+                    android.R.layout.simple_spinner_dropdown_item,
+                    this.participantsList);
+            this.participants.setAdapter(this.participantsAdapter);
+            this.runnersList.remove(currentElement);
+            this.runnersAdapter = new ArrayAdapter<>(
+                    this,
+                    android.R.layout.simple_spinner_dropdown_item,
+                    this.runnersList);
+            this.runners.setAdapter(this.runnersAdapter);
+        }
     }
 
     /**
      * Method launched when the minus button is clicked
      */
     public void onMinusClick(View view){
-        Runner currentElement = (Runner)participants.getSelectedItem();
-        this.runnersList.add(currentElement);
-        this.runnersAdapter = new ArrayAdapter<>(
-                this,
-                android.R.layout.simple_spinner_dropdown_item,
-                this.runnersList);
-        this.runners.setAdapter(this.runnersAdapter);
-        this.participantsList.remove(currentElement);
-        this.participantsAdapter = new ArrayAdapter<>(
-                this,
-                android.R.layout.simple_spinner_dropdown_item,
-                this.participantsList);
-        this.participants.setAdapter(this.participantsAdapter);
+        if(this.participants.getSelectedItem() != null) {
+            Runner currentElement = (Runner)participants.getSelectedItem();
+            this.runnersList.add(currentElement);
+            this.runnersAdapter = new ArrayAdapter<>(
+                    this,
+                    android.R.layout.simple_spinner_dropdown_item,
+                    this.runnersList);
+            this.runners.setAdapter(this.runnersAdapter);
+            this.participantsList.remove(currentElement);
+            this.participantsAdapter = new ArrayAdapter<>(
+                    this,
+                    android.R.layout.simple_spinner_dropdown_item,
+                    this.participantsList);
+            this.participants.setAdapter(this.participantsAdapter);
+        }
     }
 
     /**
@@ -109,8 +117,14 @@ public class RaceCreationActivity extends AppCompatActivity {
      */
     public void validateRace(View view) {
         if(this.participantsList.size()%3 == 0 && this.participantsList.size() <= 36) {
-            //this.createRace(1, this.courseName.getText().toString());
-            //this.createTeams();
+            int randomId = new Random().nextInt(100000);
+            this.createRace(randomId, this.courseName.getText().toString());
+            this.createTeams(randomId);
+            Intent intent = new Intent(this, TeamsActivity.class);
+            Bundle b = new Bundle();
+            b.putInt("raceId", randomId);
+            intent.putExtras(b);
+            startActivity(intent);
         } else {
             this.showErrorMessage();
         }
@@ -138,14 +152,24 @@ public class RaceCreationActivity extends AppCompatActivity {
     /**
      * Method used to create the different teams
      */
-    public void createTeams() {
-        /**ArrayList<Team> teams = new ArrayList<>();
-        for(int i = 0; i < this.participantsList.size()/3; i++) {
-            Team newTeam = new Team(i, 1);
+    public void createTeams(int raceId) {
+        AppDatabase db = AppDatabase.getInstance(this);
+        ArrayList<ArrayList<Runner>> teams = new ArrayList<>();
+        int nbTeams = this.participantsList.size()/3;
+        for(int i = 0; i < nbTeams; i++) {
+            teams.add(new ArrayList<Runner>());
             for(int j = 0; j < 3; j++) {
                 Runner selected = this.participantsList.get(new Random().nextInt(this.participantsList.size()));
+                teams.get(i).add(selected);
+                this.participantsList.remove(selected);
             }
-        }**/
+        }
+        for(int i = 0; i < teams.size(); i++) {
+            for(int j = 0; j < 3; j++) {
+                ParticipateRace participation = new ParticipateRace(raceId, teams.get(i).get(j).getIdPlayer(), i+1, j+1);
+                db.participateRaceDAO().insert(participation);
+            }
+        }
     }
 
     /**
@@ -153,8 +177,8 @@ public class RaceCreationActivity extends AppCompatActivity {
      * Returns the race ID
      */
     public void createRace(int raceId, String raceName) {
-        /**AppDatabase db = AppDatabase.getInstance(this);
-        db.raceDAO().insert(new Race(raceId, raceName));**/
+        AppDatabase db = AppDatabase.getInstance(this);
+        db.raceDAO().insert(new Race(raceId, raceName));
     }
 
 
