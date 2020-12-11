@@ -19,7 +19,7 @@ public interface RaceDAO {
     String getRaceName(int raceId);
 
     @Insert
-    void insert(Race race);
+    long insert(Race race);
 
     @Delete
     void delete(Race race);

@@ -13,7 +13,7 @@ import utbm.lepysidawy.code_p25.entity.ParticipateRace;
 import utbm.lepysidawy.code_p25.entity.Race;
 import utbm.lepysidawy.code_p25.entity.Runner;
 
-@Database(entities = {Runner.class, Race.class, ParticipateRace.class}, version = 3)
+@Database(entities = {Runner.class, Race.class, ParticipateRace.class}, version = 6)
 public abstract class AppDatabase extends RoomDatabase {
     public abstract RunnerDAO runnerDAO();
     public abstract RaceDAO raceDAO();

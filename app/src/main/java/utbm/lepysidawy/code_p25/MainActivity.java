@@ -43,16 +43,17 @@ public class MainActivity extends AppCompatActivity {
             db.raceDAO().delete(r);
         }
 
-        Runner wonho = new Runner(1,"Lee","Ho-seok",80);
-        Runner yeojin = new Runner(2,"Lim","Yeojin",40);
-        Runner heejin = new Runner(3,"Jeon","Heejin",90);
-        Runner hyunjin = new Runner(4,"Kim","Hyunjin",95);
-        Runner haseul = new Runner(5,"Cho","Haseul",70);
-        Runner vivi = new Runner(6,"Wong","Ka-Hei",20);
-        Runner yves = new Runner(7,"Ha","Soo Young",75);
-        Runner chuu = new Runner(8,"Kim","Jiwoo",80);
-        Runner choerry = new Runner(9,"Choi","Yerim",78);
-        db.runnerDAO().insertAll(wonho,yeojin,heejin, hyunjin, haseul, vivi, yves, chuu, choerry);
+        Runner wonho = new Runner("Lee","Ho-seok",80);
+        Runner yeojin = new Runner("Lim","Yeojin",40);
+        Runner heejin = new Runner("Jeon","Heejin",90);
+        Runner hyunjin = new Runner("Kim","Hyunjin",95);
+        Runner haseul = new Runner("Cho","Haseul",70);
+        Runner vivi = new Runner("Wong","Ka-Hei",99);
+        Runner yves = new Runner("Ha","Soo Young",75);
+        Runner chuu = new Runner("Kim","Jiwoo",80);
+        Runner choerry = new Runner("Choi","Yerim",78);
+        long[] runnerIds = db.runnerDAO().insertAll(wonho,yeojin,heejin, hyunjin, haseul, vivi, yves, chuu, choerry);
+
     }
 
     public void onRaceCreationClick(View view) {

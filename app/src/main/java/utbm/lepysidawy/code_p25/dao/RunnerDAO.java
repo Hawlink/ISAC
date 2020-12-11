@@ -4,6 +4,8 @@ import androidx.room.Dao;
 import androidx.room.Delete;
 import androidx.room.Insert;
 import androidx.room.Query;
+import androidx.room.RawQuery;
+import androidx.sqlite.db.SupportSQLiteQuery;
 
 import java.util.List;
 
@@ -22,7 +24,7 @@ public interface RunnerDAO {
     List<Runner> queryTest();
 
     @Insert
-    void insertAll(Runner... runner);
+    long[] insertAll(Runner... runner);
 
     @Delete
     void delete(Runner runner);

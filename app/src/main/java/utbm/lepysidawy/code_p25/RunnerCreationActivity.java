@@ -45,8 +45,8 @@ public class RunnerCreationActivity extends AppCompatActivity {
      */
     public void validateRunner(View view) {
         //lamest line of code i've written in my life
-        int randomId = new Random().nextInt(100000);
-        Runner newRunner = new Runner(randomId, this.firstName.getText().toString(), this.lastName.getText().toString(), this.levelPicker.getValue());
+        //int randomId = new Random().nextInt(100000);
+        Runner newRunner = new Runner(/*randomId,*/ this.firstName.getText().toString(), this.lastName.getText().toString(), this.levelPicker.getValue());
         AppDatabase db = AppDatabase.getInstance(this);
         db.runnerDAO().insertAll(newRunner);
         this.finish();

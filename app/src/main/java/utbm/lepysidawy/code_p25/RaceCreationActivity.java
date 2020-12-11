@@ -118,12 +118,12 @@ public class RaceCreationActivity extends AppCompatActivity {
      */
     public void validateRace(View view) {
         if(this.participantsList.size()%3 == 0 && this.participantsList.size() <= 36) {
-            int randomId = new Random().nextInt(100000);
-            this.createRace(randomId, this.courseName.getText().toString());
-            this.createTeams(randomId);
+            //DAO return a long for the ID, but ID will unlikely excess 2,147,483,647, we can allow to do an int cast
+            int raceId = (int)this.createRace(this.courseName.getText().toString());
+            this.createTeams(raceId);
             Intent intent = new Intent(this, TeamsActivity.class);
             Bundle b = new Bundle();
-            b.putInt("raceId", randomId);
+            b.putInt("raceId", raceId);
             intent.putExtras(b);
             startActivity(intent);
         } else {
@@ -231,9 +231,9 @@ public class RaceCreationActivity extends AppCompatActivity {
      * Method used to create the race and insert it in the database
      * Returns the race ID
      */
-    public void createRace(int raceId, String raceName) {
+    public long createRace(String raceName) {
         AppDatabase db = AppDatabase.getInstance(this);
-        db.raceDAO().insert(new Race(raceId, raceName));
+        return db.raceDAO().insert(new Race(raceName));
     }
 
 

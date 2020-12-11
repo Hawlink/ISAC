@@ -7,14 +7,14 @@ import androidx.room.PrimaryKey;
 @Entity
 public class Race {
 
-    @PrimaryKey
+    @PrimaryKey(autoGenerate = true)
     private int idRace;
 
     @ColumnInfo(name = "NAME")
     private String name;
 
-    public Race(int idRace, String name){
-        this.idRace = idRace;
+    public Race(String name){
+        //this.idRace = idRace;
         this.name = name;
     }
 
@@ -26,4 +26,7 @@ public class Race {
         return name;
     }
 
+    public void setIdRace(int idRace) {
+        this.idRace = idRace;
+    }
 }

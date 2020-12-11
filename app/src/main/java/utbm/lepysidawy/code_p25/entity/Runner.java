@@ -7,7 +7,7 @@ import androidx.room.PrimaryKey;
 @Entity
 public class Runner {
 
-    @PrimaryKey
+    @PrimaryKey(autoGenerate = true)
     private int idPlayer;
 
     @ColumnInfo(name = "FIRST_NAME")
@@ -19,8 +19,8 @@ public class Runner {
     @ColumnInfo(name = "LEVEL")
     private int niveau;
 
-    public Runner(int idPlayer, String firstName, String lastName, int niveau){
-        this.idPlayer = idPlayer;
+    public Runner(String firstName, String lastName, int niveau){
+        //this.idPlayer = idPlayer;
         this.firstName = firstName;
         this.lastName = lastName;
         this.niveau = niveau;
@@ -47,4 +47,7 @@ public class Runner {
         return this.firstName + " " + this.lastName + " " + this.niveau;
     }
 
+    public void setIdPlayer(int idPlayer) {
+        this.idPlayer = idPlayer;
+    }
 }
