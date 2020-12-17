@@ -24,18 +24,23 @@
     <string name="validate_team">VALIDER EQUIPE</string>
     <string name="courseName">NOM COURSE</string>
     <string name="counter">00:00:00</string>
-    <string-array name="loona">
-        <item>Heejin</item>
-        <item>Hyunjin</item>
-        <item>HaSeul</item>
-        <item>Yeojin</item>
-        <item>Vivi</item>
-        <item>Kim Lip</item>
-        <item>JinSoul</item>
-        <item>Choerry</item>
-        <item>Yves</item>
-        <item>Chuu</item>
-        <item>Go Won</item>
-        <item>Olivia Hye</item>
-    </string-array>
+    <string name="firstTeam">EQUIPE 1</string>
+    <string name="firstSprint">SPRINT 1</string>
+    <string name="secondTeam">EQUIPE 2</string>
+    <string name="thirdTeam">EQUIPE 3</string>
+    <string name="fourthTeam">EQUIPE 4</string>
+    <string name="fifthTeam">EQUIPE 5</string>
+    <string name="sixthTeam">EQUIPE 6</string>
+    <string name="seventhTeam">EQUIPE 7</string>
+    <string name="eightTeam">EQUIPE 8</string>
+    <string name="ninthTeam">EQUIPE 9</string>
+    <string name="tenthTeam">EQUIPE 10</string>
+    <string name="eleventhTeam">EQUIPE 11</string>
+    <string name="twelthTeam">EQUIPE 12</string>
+    <string name="course_Stats">STATISTIQUES DE LA COURSE</string>
+    <string name="firstObstacle">OBSTACLE 1</string>
+    <string name="pitStop">PIT STOP</string>
+    <string name="secondSprint">SPRINT 2</string>
+    <string name="secondObstacle">OBSTACLE 2</string>
+    <string name="goBack">RETOUR</string>
 </resources>

@@ -29,6 +29,7 @@
                 android:layout_height="75dp"
                 android:layout_width="150dp"
                 android:layout_marginEnd="20dp"
+                android:textSize="20sp"
                 android:gravity="center"/>
 
             <EditText
@@ -116,7 +117,6 @@
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:layout_weight="20"
-            android:paddingTop="50dp"
             android:paddingStart="420dp"
             android:paddingEnd="330dp"
             android:orientation="horizontal" >

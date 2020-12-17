@@ -28,10 +28,11 @@
                 android:text="@string/codep25"
                 style="@style/textView"
                 android:layout_marginEnd="20dp"
+                android:textSize="20sp"
                 android:gravity="center"/>
 
             <ImageView
-                android:src="@drawable/skz_logo"
+                android:src="@drawable/running_man_grey"
                 android:layout_height="75dp"
                 android:layout_width="150dp"
                 android:layout_marginEnd="20dp" />

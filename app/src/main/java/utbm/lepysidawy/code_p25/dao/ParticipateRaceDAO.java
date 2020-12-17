@@ -23,6 +23,21 @@ public interface ParticipateRaceDAO {
     @Query("UPDATE ParticipateRace SET RUNNING_ORDER = :runningOrder WHERE ID_RACE = :raceId AND ID_RUNNER = :runnerId")
     int updateRunningOrder(int raceId, int runnerId, int runningOrder);
 
+    @Query("UPDATE ParticipateRace SET SPRINT1 = :time WHERE ID_RACE = :raceId AND ID_RUNNER = :runnerId")
+    int updateSprint1(int raceId, int runnerId, float time);
+
+    @Query("UPDATE ParticipateRace SET OBSTACLE1 = :time WHERE ID_RACE = :raceId AND ID_RUNNER = :runnerId")
+    int updateObstacle1(int raceId, int runnerId, float time);
+
+    @Query("UPDATE ParticipateRace SET PIT_STOP = :time WHERE ID_RACE = :raceId AND ID_RUNNER = :runnerId")
+    int updatePitStop(int raceId, int runnerId, float time);
+
+    @Query("UPDATE ParticipateRace SET SPRINT2 = :time WHERE ID_RACE = :raceId AND ID_RUNNER = :runnerId")
+    int updateSprint2(int raceId, int runnerId, float time);
+
+    @Query("UPDATE ParticipateRace SET OBSTACLE2 = :time WHERE ID_RACE = :raceId AND ID_RUNNER = :runnerId")
+    int updateObstacle2(int raceId, int runnerId, float time);
+
     @Insert
     void insert(ParticipateRace participation);
 

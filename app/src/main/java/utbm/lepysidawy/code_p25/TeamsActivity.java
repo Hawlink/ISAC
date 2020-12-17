@@ -17,9 +17,10 @@ import java.util.ArrayList;
  */
 public class TeamsActivity extends AppCompatActivity {
 
+    private int raceId;
+
     private Spinner teams;
     private ArrayAdapter<String> teamsAdapter;
-    private int raceId;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {

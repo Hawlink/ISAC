@@ -9,7 +9,6 @@ import android.view.View;
 import android.widget.EditText;
 import android.widget.NumberPicker;
 
-import java.util.Random;
 
 /**
  * In this activity, the user can create a runner by
@@ -44,9 +43,7 @@ public class RunnerCreationActivity extends AppCompatActivity {
      * @param view
      */
     public void validateRunner(View view) {
-        //lamest line of code i've written in my life
-        //int randomId = new Random().nextInt(100000);
-        Runner newRunner = new Runner(/*randomId,*/ this.firstName.getText().toString(), this.lastName.getText().toString(), this.levelPicker.getValue());
+        Runner newRunner = new Runner(this.firstName.getText().toString(), this.lastName.getText().toString(), this.levelPicker.getValue());
         AppDatabase db = AppDatabase.getInstance(this);
         db.runnerDAO().insertAll(newRunner);
         this.finish();

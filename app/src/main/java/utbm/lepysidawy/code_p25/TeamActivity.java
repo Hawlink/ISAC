@@ -15,14 +15,19 @@ import java.util.Collections;
 import java.util.Comparator;
 import java.util.List;
 
+/**
+ * Activity in which the user
+ * can change the order of the participants of a team
+ */
 public class TeamActivity extends AppCompatActivity {
+
+    private int raceId;
+    private int teamNumber;
+    private ArrayList<Runner> runners;
 
     private Button firstPlayer;
     private Button secondPlayer;
     private Button thirdPlayer;
-    private int raceId;
-    private int teamNumber;
-    private ArrayList<Runner> runners;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {

@@ -15,7 +15,6 @@ import android.widget.ArrayAdapter;
 import android.widget.EditText;
 import android.widget.Spinner;
 
-import java.lang.reflect.Array;
 import java.util.ArrayList;
 import java.util.List;
 import java.util.Random;
@@ -26,13 +25,14 @@ import java.util.Random;
  */
 public class RaceCreationActivity extends AppCompatActivity {
 
+    private ArrayList<Runner> runnersList;
+    private ArrayList<Runner> participantsList;
+
     private Spinner runners;
     private Spinner participants;
     private EditText courseName;
     private ArrayAdapter<Runner> runnersAdapter;
     private ArrayAdapter<Runner> participantsAdapter;
-    private ArrayList<Runner> runnersList;
-    private ArrayList<Runner> participantsList;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {

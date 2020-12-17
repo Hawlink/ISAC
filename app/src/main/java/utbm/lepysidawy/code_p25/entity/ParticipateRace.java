@@ -105,4 +105,11 @@ public class ParticipateRace {
         this.obstacle2 = obstacle2;
     }
 
+    @Override
+    public String toString() {
+        return "SPRINT 1 " + this.sprint1 + "\n" + " OBSTACLE 1 " + this.obstacle1 + "\n"
+        + " PITSTOP " + this.pitStop + "\n" + " SPRINT 2 " + this.sprint2 + "\n" +
+        " OBSTACLE 2 " + this.obstacle2 + "\n";
+    }
+
 }
