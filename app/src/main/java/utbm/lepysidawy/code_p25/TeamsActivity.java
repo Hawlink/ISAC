@@ -5,6 +5,7 @@ import utbm.lepysidawy.code_p25.database.AppDatabase;
 
 import android.content.Intent;
 import android.os.Bundle;
+import android.util.Log;
 import android.view.View;
 import android.widget.ArrayAdapter;
 import android.widget.Spinner;
@@ -58,7 +59,9 @@ public class TeamsActivity extends AppCompatActivity {
      * @param view
      */
     public void consultTeam(View view) {
-        int teamNumber = Character.getNumericValue(this.teams.getSelectedItem().toString().charAt(this.teams.getSelectedItem().toString().length() - 1));
+        //int teamNumber = Character.getNumericValue(this.teams.getSelectedItem().toString().charAt(this.teams.getSelectedItem().toString().length() - 1));
+        int teamNumber = Integer.parseInt(this.teams.getSelectedItem().toString().split(" ")[1]);
+        Log.d("test",teamNumber + "");
         Intent intent = new Intent(this, TeamActivity.class);
         Bundle b = new Bundle();
         b.putInt("raceId", this.raceId);

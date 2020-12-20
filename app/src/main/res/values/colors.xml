@@ -5,4 +5,5 @@
     <color name="colorAccent">#03DAC5</color>
     <color name="colorButtonText">#EEEEEE</color>
     <color name="colorButtonShadow">#333333</color>
+    <color name="colorStepTime">#750F0F</color>
 </resources>

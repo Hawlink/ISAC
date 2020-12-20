@@ -43,4 +43,6 @@
     <string name="secondSprint">SPRINT 2</string>
     <string name="secondObstacle">OBSTACLE 2</string>
     <string name="goBack">RETOUR</string>
+    <string name="chronoTime">CHRONO</string>
+    <string name="stepTime">TEMPS ETAPE</string>
 </resources>

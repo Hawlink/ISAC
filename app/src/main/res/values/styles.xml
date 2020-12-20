@@ -31,4 +31,10 @@
         <item name="android:layout_width">150dp</item>
     </style>
 
+    <style name="stepTimeTextView" parent="@style/Widget.AppCompat.TextView">
+        <item name="android:layout_height">75dp</item>
+        <item name="android:layout_width">150dp</item>
+        <item name="android:textColor">@color/colorStepTime</item>
+    </style>
+
 </resources>

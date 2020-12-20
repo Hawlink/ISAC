@@ -7,7 +7,9 @@ import android.os.Bundle;
 import android.util.Log;
 import android.view.View;
 
+import java.util.ArrayList;
 import java.util.List;
+import java.util.Random;
 
 import utbm.lepysidawy.code_p25.database.AppDatabase;
 import utbm.lepysidawy.code_p25.entity.ParticipateRace;
@@ -48,10 +50,12 @@ public class MainActivity extends AppCompatActivity {
         Runner heejin = new Runner("Jeon","Heejin",90);
         Runner hyunjin = new Runner("Kim","Hyunjin",95);
         Runner haseul = new Runner("Cho","Haseul",70);
-        Runner vivi = new Runner("Wong","Ka-Hei",3);
+        Runner vivi = new Runner("Wong","Ka-Hei",90);
         Runner yves = new Runner("Ha","Soo Young",75);
         Runner chuu = new Runner("Kim","Jiwoo",80);
         Runner choerry = new Runner("Choi","Yerim",78);
+
+
         long[] runnerIds = db.runnerDAO().insertAll(wonho,yeojin,heejin, hyunjin, haseul, vivi, yves, chuu, choerry);
     }
 

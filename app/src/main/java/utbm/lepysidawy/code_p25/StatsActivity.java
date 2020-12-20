@@ -34,6 +34,11 @@ public class StatsActivity extends AppCompatActivity implements AdapterView.OnIt
     private TextView pitstop;
     private TextView sprint2;
     private TextView obstacle2;
+    private TextView sprint1Time;
+    private TextView obstacle1Time;
+    private TextView pitstopTime;
+    private TextView sprint2Time;
+    private TextView obstacle2Time;
 
     private int raceId;
     private int teamsNumber;
@@ -51,6 +56,11 @@ public class StatsActivity extends AppCompatActivity implements AdapterView.OnIt
         this.pitstop = (TextView) findViewById(R.id.pitstop);
         this.sprint2 = (TextView) findViewById(R.id.sprint2);
         this.obstacle2 = (TextView) findViewById(R.id.obstacle2);
+        this.sprint1Time = (TextView) findViewById(R.id.sprint1time);
+        this.obstacle1Time = (TextView) findViewById(R.id.obstacle1time);
+        this.pitstopTime = (TextView) findViewById(R.id.pitstoptime);
+        this.sprint2Time = (TextView) findViewById(R.id.sprint2time);
+        this.obstacle2Time = (TextView) findViewById(R.id.obstacle2time);
         this.teamsSpinner.setOnItemSelectedListener(this);
         this.runnersSpinner.setOnItemSelectedListener(this);
         this.teamsNumber = 0;
@@ -127,6 +137,7 @@ public class StatsActivity extends AppCompatActivity implements AdapterView.OnIt
      * using the id of the team and the position of the player in the team
      */
     public void updateStepTimes(int teamId, int playerPos) {
+        //Update chrono tip times
         String time = this.convertSecondsToFullTime(this.participations.get(teamId).get(playerPos).getSprint1());
         this.sprint1.setText(time);
         time = this.convertSecondsToFullTime(this.participations.get(teamId).get(playerPos).getObstacle1());
@@ -137,6 +148,21 @@ public class StatsActivity extends AppCompatActivity implements AdapterView.OnIt
         this.sprint2.setText(time);
         time = this.convertSecondsToFullTime(this.participations.get(teamId).get(playerPos).getObstacle2());
         this.obstacle2.setText(time);
+        //Update step times
+        if(playerPos > 0){
+            time = this.convertSecondsToFullTime(this.participations.get(teamId).get(playerPos).getSprint1() - this.participations.get(teamId).get(playerPos-1).getObstacle2());
+        }else{
+            time = this.convertSecondsToFullTime(this.participations.get(teamId).get(playerPos).getSprint1());
+        }
+        this.sprint1Time.setText(time);
+        time = this.convertSecondsToFullTime(this.participations.get(teamId).get(playerPos).getObstacle1() - this.participations.get(teamId).get(playerPos).getSprint1());
+        this.obstacle1Time.setText(time);
+        time = this.convertSecondsToFullTime(this.participations.get(teamId).get(playerPos).getPitStop() - this.participations.get(teamId).get(playerPos).getObstacle1());
+        this.pitstopTime.setText(time);
+        time = this.convertSecondsToFullTime(this.participations.get(teamId).get(playerPos).getSprint2() - this.participations.get(teamId).get(playerPos).getPitStop());
+        this.sprint2Time.setText(time);
+        time = this.convertSecondsToFullTime(this.participations.get(teamId).get(playerPos).getObstacle2() - this.participations.get(teamId).get(playerPos).getSprint2());
+        this.obstacle2Time.setText(time);
     }
 
     /**
