@@ -17,6 +17,9 @@ public interface ParticipateRaceDAO {
     @Query("SELECT * FROM ParticipateRace WHERE ParticipateRace.ID_RACE = :raceId AND ParticipateRace.TEAM_NUMBER = :teamNumber")
     List<ParticipateRace> getParticipationsFromCourseAndTeamNumber(int raceId, int teamNumber);
 
+    @Query("SELECT * FROM ParticipateRace WHERE ParticipateRace.ID_RACE = :raceId")
+    List<ParticipateRace> getParticipationsFromCourse(int raceId);
+
     @Query("SELECT COUNT(DISTINCT ParticipateRace.TEAM_NUMBER) FROM ParticipateRace WHERE ParticipateRace.ID_RACE = :raceId")
     int getTeamsNumber(int raceId);
 

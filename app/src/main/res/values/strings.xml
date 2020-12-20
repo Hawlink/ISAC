@@ -45,4 +45,9 @@
     <string name="goBack">RETOUR</string>
     <string name="chronoTime">CHRONO</string>
     <string name="stepTime">TEMPS ETAPE</string>
+    <string name="team">EQUIPE</string>
+    <string name="runner">COUREUR</string>
+    <string name="course_Stats_records">MEILLEURS TEMPS PAR EPREUVE</string>
+    <string name="detailedStats">STATISTIQUES DETAILLES</string>
+    <string name="history">HISTORIQUE DES COURSES</string>
 </resources>

@@ -74,7 +74,8 @@
             <Button
                 android:id="@+id/statistics"
                 style="@style/mainActivityButton"
-                android:text="@string/stats" />
+                android:text="@string/stats"
+                android:onClick="onStatsButtonClick"/>
 
             <Button
                 android:id="@+id/leave"

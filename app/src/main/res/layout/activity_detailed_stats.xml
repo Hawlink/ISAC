@@ -18,36 +18,21 @@
         <LinearLayout
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:orientation="horizontal"
-            android:paddingTop="10dp"
-            android:layout_gravity="center_horizontal|center_vertical"
-            android:gravity="right">
-
-            <Button
-                android:id="@+id/detailedStats"
-                android:layout_height="75dp"
-                android:layout_width="150dp"
-                style="@style/mainActivityButton"
-                android:text="@string/detailedStats"
-                android:onClick="detailedStats"/>
-
-        </LinearLayout>
-
-        <LinearLayout
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
             android:layout_weight="25"
-            android:orientation="horizontal"
-            android:layout_gravity="center_horizontal|center_vertical"
-            android:gravity="center_vertical">
+            android:paddingTop="95dp"
+            android:paddingStart="420dp"
+            android:paddingEnd="330dp"
+            android:orientation="vertical">
 
             <TextView
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
                 android:text="@string/course_Stats"
                 style="@style/textView"
                 android:layout_marginEnd="20dp"
-                android:layout_weight="1"
+                android:gravity="center"/>
+            <TextView
+                android:text="@string/course_Stats_records"
+                style="@style/textView"
+                android:layout_marginEnd="20dp"
                 android:gravity="center"/>
 
         </LinearLayout>
@@ -56,31 +41,6 @@
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:layout_weight="25"
-            android:paddingTop="25dp"
-            android:paddingStart="340dp"
-            android:paddingEnd="100dp"
-            android:orientation="horizontal" >
-
-            <Spinner
-                android:id="@+id/teamsSpinner"
-                android:layout_width="150dp"
-                android:layout_height="75dp"
-                android:layout_marginEnd="20dp"
-                android:text = "@string/runners"/>
-
-            <Spinner
-                android:id="@+id/runnersSpinner"
-                android:layout_width="150dp"
-                android:layout_height="75dp"
-                android:layout_marginEnd="20dp"
-                android:text = "@string/runners"/>
-
-        </LinearLayout>
-
-        <LinearLayout
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:layout_weight="15"
             android:paddingTop="95dp"
             android:paddingStart="199dp"
             android:paddingEnd="10dp"
@@ -88,12 +48,26 @@
 
             <LinearLayout
                 android:layout_width="100dp"
-                android:layout_height="100dp"
+                android:layout_height="120dp"
                 android:orientation="vertical"
                 android:layout_marginEnd="20dp">
 
                 <TextView
                     android:text=""
+                    style="@style/textView"
+                    android:layout_width="match_parent"
+                    android:layout_height="30dp"
+                    android:layout_gravity="center"/>
+
+                <TextView
+                    android:text="@string/team"
+                    style="@style/textView"
+                    android:layout_width="match_parent"
+                    android:layout_height="30dp"
+                    android:layout_gravity="center"/>
+
+                <TextView
+                    android:text="@string/runner"
                     style="@style/textView"
                     android:layout_width="match_parent"
                     android:layout_height="30dp"
@@ -106,18 +80,11 @@
                     android:layout_height="30dp"
                     android:layout_gravity="center"/>
 
-                <TextView
-                    android:text="@string/stepTime"
-                    style="@style/textView"
-                    android:layout_width="match_parent"
-                    android:layout_height="30dp"
-                    android:layout_gravity="center"/>
-
             </LinearLayout>
 
             <LinearLayout
                 android:layout_width="100dp"
-                android:layout_height="100dp"
+                android:layout_height="120dp"
                 android:orientation="vertical"
                 android:layout_marginEnd="20dp">
 
@@ -131,14 +98,22 @@
                 <TextView
                     android:text=""
                     style="@style/textView"
-                    android:id="@+id/sprint1"
+                    android:id="@+id/sprint1team"
                     android:layout_height="30dp"
                     android:layout_width="match_parent"
                     android:gravity="center"/>
 
                 <TextView
-                    android:id="@+id/sprint1time"
-                    style="@style/stepTimeTextView"
+                    android:id="@+id/sprint1runner"
+                    style="@style/textView"
+                    android:layout_width="match_parent"
+                    android:layout_height="30dp"
+                    android:gravity="center"
+                    android:text="" />
+
+                <TextView
+                    android:id="@+id/sprint1"
+                    style="@style/textView"
                     android:layout_width="match_parent"
                     android:layout_height="30dp"
                     android:gravity="center"
@@ -148,7 +123,7 @@
 
             <LinearLayout
                 android:layout_width="100dp"
-                android:layout_height="100dp"
+                android:layout_height="120dp"
                 android:orientation="vertical"
                 android:layout_marginEnd="20dp">
 
@@ -161,15 +136,23 @@
 
                 <TextView
                     android:text=""
-                    android:id="@+id/obstacle1"
                     style="@style/textView"
+                    android:id="@+id/obstacle1team"
                     android:layout_height="30dp"
                     android:layout_width="match_parent"
                     android:gravity="center"/>
 
                 <TextView
-                    android:id="@+id/obstacle1time"
-                    style="@style/stepTimeTextView"
+                    android:id="@+id/obstacle1runner"
+                    style="@style/textView"
+                    android:layout_width="match_parent"
+                    android:layout_height="30dp"
+                    android:gravity="center"
+                    android:text="" />
+
+                <TextView
+                    android:id="@+id/obstacle1"
+                    style="@style/textView"
                     android:layout_width="match_parent"
                     android:layout_height="30dp"
                     android:gravity="center"
@@ -179,7 +162,7 @@
 
             <LinearLayout
                 android:layout_width="100dp"
-                android:layout_height="100dp"
+                android:layout_height="120dp"
                 android:orientation="vertical"
                 android:layout_marginEnd="20dp">
 
@@ -193,14 +176,22 @@
                 <TextView
                     android:text=""
                     style="@style/textView"
-                    android:id="@+id/pitstop"
+                    android:id="@+id/pitstopteam"
                     android:layout_height="30dp"
                     android:layout_width="match_parent"
                     android:gravity="center"/>
 
                 <TextView
-                    android:id="@+id/pitstoptime"
-                    style="@style/stepTimeTextView"
+                    android:id="@+id/pitstoprunner"
+                    style="@style/textView"
+                    android:layout_width="match_parent"
+                    android:layout_height="30dp"
+                    android:gravity="center"
+                    android:text="" />
+
+                <TextView
+                    android:id="@+id/pitstop"
+                    style="@style/textView"
                     android:layout_width="match_parent"
                     android:layout_height="30dp"
                     android:gravity="center"
@@ -210,7 +201,7 @@
 
             <LinearLayout
                 android:layout_width="100dp"
-                android:layout_height="100dp"
+                android:layout_height="120dp"
                 android:orientation="vertical"
                 android:layout_marginEnd="20dp">
 
@@ -224,14 +215,22 @@
                 <TextView
                     android:text=""
                     style="@style/textView"
-                    android:id="@+id/sprint2"
+                    android:id="@+id/sprint2team"
                     android:layout_height="30dp"
                     android:layout_width="match_parent"
                     android:gravity="center"/>
 
                 <TextView
-                    android:id="@+id/sprint2time"
-                    style="@style/stepTimeTextView"
+                    android:id="@+id/sprint2runner"
+                    style="@style/textView"
+                    android:layout_width="match_parent"
+                    android:layout_height="30dp"
+                    android:gravity="center"
+                    android:text="" />
+
+                <TextView
+                    android:id="@+id/sprint2"
+                    style="@style/textView"
                     android:layout_width="match_parent"
                     android:layout_height="30dp"
                     android:gravity="center"
@@ -241,7 +240,7 @@
 
             <LinearLayout
                 android:layout_width="100dp"
-                android:layout_height="100dp"
+                android:layout_height="120dp"
                 android:orientation="vertical" >
 
                 <TextView
@@ -254,14 +253,22 @@
                 <TextView
                     android:text=""
                     style="@style/textView"
-                    android:id="@+id/obstacle2"
+                    android:id="@+id/obstacle2team"
                     android:layout_height="30dp"
                     android:layout_width="match_parent"
                     android:gravity="center"/>
 
                 <TextView
-                    android:id="@+id/obstacle2time"
-                    style="@style/stepTimeTextView"
+                    android:id="@+id/obstacle2runner"
+                    style="@style/textView"
+                    android:layout_width="match_parent"
+                    android:layout_height="30dp"
+                    android:gravity="center"
+                    android:text="" />
+
+                <TextView
+                    android:id="@+id/obstacle2"
+                    style="@style/textView"
                     android:layout_width="match_parent"
                     android:layout_height="30dp"
                     android:gravity="center"
