@@ -18,8 +18,8 @@
         <LinearLayout
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:layout_weight="25"
-            android:paddingTop="95dp"
+            android:layout_weight="10"
+            android:paddingTop="10dp"
             android:paddingStart="330dp"
             android:orientation="horizontal">
 
@@ -51,42 +51,42 @@
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:layout_weight="25"
-            android:orientation="horizontal">
+            android:orientation="horizontal"
+            android:layout_marginBottom="15dp">
 
             <LinearLayout
+                android:id="@+id/firstTeam"
                 android:layout_width="match_parent"
                 android:layout_height="match_parent"
-                android:layout_weight="25"
-                android:weightSum="100"
-                android:orientation="vertical"
                 android:layout_marginEnd="20dp"
-                android:visibility="invisible"
-                android:id="@+id/firstTeam"
+                android:layout_weight="25"
                 android:background="@drawable/customborder"
-                android:onClick="onTeamClick"
                 android:clickable="false"
-                >
+                android:onClick="onTeamClick"
+                android:orientation="vertical"
+                android:visibility="invisible"
+                android:weightSum="100">
 
-                    <TextView
-                        android:layout_height="20dp"
-                        android:layout_width="match_parent"
-                        android:text="@string/firstTeam"
-                        android:layout_weight="33"
-                        android:gravity="center"/>
+                <TextView
+                    android:layout_width="match_parent"
+                    android:layout_height="10dp"
+                    android:layout_weight="33"
+                    android:gravity="center"
+                    android:text="@string/firstTeam" />
 
-                    <TextView
-                        android:layout_height="20dp"
-                        android:layout_width="match_parent"
-                        android:text="COUREUR"
-                        android:layout_weight="33"
-                        android:gravity="center"/>
+                <TextView
+                    android:layout_width="match_parent"
+                    android:layout_height="10dp"
+                    android:layout_weight="33"
+                    android:gravity="center"
+                    android:text="COUREUR" />
 
-                    <TextView
-                        android:layout_height="20dp"
-                        android:layout_width="match_parent"
-                        android:text="@string/firstSprint"
-                        android:layout_weight="33"
-                        android:gravity="center"/>
+                <TextView
+                    android:layout_width="match_parent"
+                    android:layout_height="10dp"
+                    android:layout_weight="33"
+                    android:gravity="center"
+                    android:text="@string/firstSprint" />
             </LinearLayout>
 
             <LinearLayout
@@ -103,21 +103,21 @@
                 android:clickable="false">
 
                 <TextView
-                    android:layout_height="20dp"
+                    android:layout_height="10dp"
                     android:layout_width="match_parent"
                     android:text="@string/secondTeam"
                     android:layout_weight="33"
                     android:gravity="center"/>
 
                 <TextView
-                    android:layout_height="20dp"
+                    android:layout_height="10dp"
                     android:layout_width="match_parent"
                     android:text="COUREUR"
                     android:layout_weight="33"
                     android:gravity="center"/>
 
                 <TextView
-                    android:layout_height="20dp"
+                    android:layout_height="10dp"
                     android:layout_width="match_parent"
                     android:text="SPRINT 1"
                     android:layout_weight="33"
@@ -138,21 +138,21 @@
                 android:clickable="false">
 
                 <TextView
-                    android:layout_height="20dp"
+                    android:layout_height="10dp"
                     android:layout_width="match_parent"
                     android:text="@string/thirdTeam"
                     android:layout_weight="33"
                     android:gravity="center"/>
 
                 <TextView
-                    android:layout_height="20dp"
+                    android:layout_height="10dp"
                     android:layout_width="match_parent"
                     android:text="COUREUR"
                     android:layout_weight="33"
                     android:gravity="center"/>
 
                 <TextView
-                    android:layout_height="20dp"
+                    android:layout_height="10dp"
                     android:layout_width="match_parent"
                     android:text="SPRINT 1"
                     android:layout_weight="33"
@@ -173,21 +173,21 @@
                 android:clickable="false">
 
                 <TextView
-                    android:layout_height="20dp"
+                    android:layout_height="10dp"
                     android:layout_width="match_parent"
                     android:text="@string/fourthTeam"
                     android:layout_weight="33"
                     android:gravity="center"/>
 
                 <TextView
-                    android:layout_height="20dp"
+                    android:layout_height="10dp"
                     android:layout_width="match_parent"
                     android:text="COUREUR"
                     android:layout_weight="33"
                     android:gravity="center"/>
 
                 <TextView
-                    android:layout_height="20dp"
+                    android:layout_height="10dp"
                     android:layout_width="match_parent"
                     android:text="SPRINT 1"
                     android:layout_weight="33"
@@ -201,8 +201,8 @@
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:layout_weight="25"
-            android:orientation="horizontal"
-            android:visibility="invisible">
+            android:layout_marginBottom="15dp"
+            android:orientation="horizontal">
 
             <LinearLayout
                 android:layout_width="match_parent"
@@ -214,26 +214,27 @@
                 android:background="@drawable/customborder"
                 android:onClick="onTeamClick"
                 android:id="@+id/fifthTeam"
+                android:visibility="invisible"
                 android:clickable="false">
 
                 <TextView
-                    android:layout_height="20dp"
+                    android:layout_height="10dp"
                     android:layout_width="match_parent"
                     android:text="@string/fifthTeam"
                     android:layout_weight="33"
                     android:gravity="center"/>
 
                 <TextView
-                    android:layout_height="20dp"
+                    android:layout_height="10dp"
                     android:layout_width="match_parent"
                     android:text="COUREUR"
                     android:layout_weight="33"
                     android:gravity="center"/>
 
                 <TextView
-                    android:layout_height="20dp"
+                    android:layout_height="10dp"
                     android:layout_width="match_parent"
-                    android:text="SPRINT1"
+                    android:text="SPRINT 1"
                     android:layout_weight="33"
                     android:gravity="center"/>
             </LinearLayout>
@@ -252,21 +253,21 @@
                 android:clickable="false">
 
                 <TextView
-                    android:layout_height="20dp"
+                    android:layout_height="10dp"
                     android:layout_width="match_parent"
                     android:text="@string/sixthTeam"
                     android:layout_weight="33"
                     android:gravity="center"/>
 
                 <TextView
-                    android:layout_height="20dp"
+                    android:layout_height="10dp"
                     android:layout_width="match_parent"
                     android:text="COUREUR"
                     android:layout_weight="33"
                     android:gravity="center"/>
 
                 <TextView
-                    android:layout_height="20dp"
+                    android:layout_height="10dp"
                     android:layout_width="match_parent"
                     android:text="SPRINT 1"
                     android:layout_weight="33"
@@ -287,21 +288,21 @@
                 android:clickable="false">
 
                 <TextView
-                    android:layout_height="20dp"
+                    android:layout_height="10dp"
                     android:layout_width="match_parent"
                     android:text="@string/seventhTeam"
                     android:layout_weight="33"
                     android:gravity="center"/>
 
                 <TextView
-                    android:layout_height="20dp"
+                    android:layout_height="10dp"
                     android:layout_width="match_parent"
                     android:text="COUREUR"
                     android:layout_weight="33"
                     android:gravity="center"/>
 
                 <TextView
-                    android:layout_height="20dp"
+                    android:layout_height="10dp"
                     android:layout_width="match_parent"
                     android:text="SPRINT 1"
                     android:layout_weight="33"
@@ -322,21 +323,21 @@
                 android:clickable="false">
 
                 <TextView
-                    android:layout_height="20dp"
+                    android:layout_height="10dp"
                     android:layout_width="match_parent"
                     android:text="@string/eightTeam"
                     android:layout_weight="33"
                     android:gravity="center"/>
 
                 <TextView
-                    android:layout_height="20dp"
+                    android:layout_height="10dp"
                     android:layout_width="match_parent"
                     android:text="COUREUR"
                     android:layout_weight="33"
                     android:gravity="center"/>
 
                 <TextView
-                    android:layout_height="20dp"
+                    android:layout_height="10dp"
                     android:layout_width="match_parent"
                     android:text="SPRINT 1"
                     android:layout_weight="33"
@@ -366,21 +367,21 @@
                 android:clickable="false">
 
                 <TextView
-                    android:layout_height="20dp"
+                    android:layout_height="10dp"
                     android:layout_width="match_parent"
                     android:text="@string/ninthTeam"
                     android:layout_weight="33"
                     android:gravity="center"/>
 
                 <TextView
-                    android:layout_height="20dp"
+                    android:layout_height="10dp"
                     android:layout_width="match_parent"
                     android:text="COUREUR"
                     android:layout_weight="33"
                     android:gravity="center"/>
 
                 <TextView
-                    android:layout_height="20dp"
+                    android:layout_height="10dp"
                     android:layout_width="match_parent"
                     android:text="SPRINT 1"
                     android:layout_weight="33"
@@ -401,21 +402,21 @@
                 android:clickable="false">
 
                 <TextView
-                    android:layout_height="20dp"
+                    android:layout_height="10dp"
                     android:layout_width="match_parent"
                     android:text="@string/tenthTeam"
                     android:layout_weight="33"
                     android:gravity="center"/>
 
                 <TextView
-                    android:layout_height="20dp"
+                    android:layout_height="10dp"
                     android:layout_width="match_parent"
                     android:text="COUREUR"
                     android:layout_weight="33"
                     android:gravity="center"/>
 
                 <TextView
-                    android:layout_height="20dp"
+                    android:layout_height="10dp"
                     android:layout_width="match_parent"
                     android:text="SPRINT 1"
                     android:layout_weight="33"
@@ -436,21 +437,21 @@
                 android:clickable="false">
 
                 <TextView
-                    android:layout_height="20dp"
+                    android:layout_height="10dp"
                     android:layout_width="match_parent"
                     android:text="@string/eleventhTeam"
                     android:layout_weight="33"
                     android:gravity="center"/>
 
                 <TextView
-                    android:layout_height="20dp"
+                    android:layout_height="10dp"
                     android:layout_width="match_parent"
                     android:text="COUREUR"
                     android:layout_weight="33"
                     android:gravity="center"/>
 
                 <TextView
-                    android:layout_height="20dp"
+                    android:layout_height="10dp"
                     android:layout_width="match_parent"
                     android:text="SPRINT 1"
                     android:layout_weight="33"
@@ -471,21 +472,21 @@
                 android:clickable="false">
 
                 <TextView
-                    android:layout_height="20dp"
+                    android:layout_height="10dp"
                     android:layout_width="match_parent"
                     android:text="@string/twelthTeam"
                     android:layout_weight="33"
                     android:gravity="center"/>
 
                 <TextView
-                    android:layout_height="20dp"
+                    android:layout_height="10dp"
                     android:layout_width="match_parent"
                     android:text="COUREUR"
                     android:layout_weight="33"
                     android:gravity="center"/>
 
                 <TextView
-                    android:layout_height="20dp"
+                    android:layout_height="10dp"
                     android:layout_width="match_parent"
                     android:text="SPRINT 1"
                     android:layout_weight="33"
