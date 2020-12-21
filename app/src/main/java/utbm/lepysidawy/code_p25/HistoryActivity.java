@@ -2,6 +2,7 @@ package utbm.lepysidawy.code_p25;
 
 import androidx.appcompat.app.AppCompatActivity;
 
+import android.content.Intent;
 import android.os.Bundle;
 import android.telephony.mbms.MbmsErrors;
 import android.util.Log;
@@ -28,7 +29,6 @@ public class HistoryActivity extends AppCompatActivity {
             v.addView(vr);
         }
 
-
     }
 
     @Override
@@ -44,6 +44,11 @@ public class HistoryActivity extends AppCompatActivity {
      */
     public void finish (View view) {
         super.finish();
+    }
+
+    public void detailedStats(View view){
+        Intent intent = new Intent(this, DetailedStatsHistoryActivity.class);
+        startActivity(intent);
     }
 
 }

@@ -30,7 +30,7 @@ public class MainActivity extends AppCompatActivity {
         AppDatabase db = AppDatabase.getInstance(this);
         Log.d("App","Running");
 
-        /*
+
         List<ParticipateRace> participations = db.participateRaceDAO().getAll();
         for(ParticipateRace p : participations){
             db.participateRaceDAO().delete(p);
@@ -61,7 +61,7 @@ public class MainActivity extends AppCompatActivity {
             db.runnerDAO().insertAll(new Runner("A" + i, "B"+ i,rd.nextInt(100)));
         }
 
-        long[] runnerIds = db.runnerDAO().insertAll(wonho,yeojin,heejin, hyunjin, haseul, vivi, yves, chuu, choerry);*/
+        long[] runnerIds = db.runnerDAO().insertAll(wonho,yeojin,heejin, hyunjin, haseul, vivi, yves, chuu, choerry);
     }
 
     public void onRaceCreationClick(View view) {

@@ -14,6 +14,9 @@ public interface ParticipateRaceDAO {
     @Query("SELECT * FROM ParticipateRace")
     List<ParticipateRace> getAll();
 
+    @Query("SELECT * FROM ParticipateRace WHERE ParticipateRace.ID_RACE = :raceId AND ParticipateRace.TEAM_NUMBER = :teamNumber AND ParticipateRace.RUNNING_ORDER = :runningOrder")
+    ParticipateRace getParticipationsFromCourseAndTeamNumberAndRunningOrder(int raceId, int teamNumber, int runningOrder);
+
     @Query("SELECT * FROM ParticipateRace WHERE ParticipateRace.ID_RACE = :raceId AND ParticipateRace.TEAM_NUMBER = :teamNumber")
     List<ParticipateRace> getParticipationsFromCourseAndTeamNumber(int raceId, int teamNumber);
 

@@ -2,6 +2,7 @@ package utbm.lepysidawy.code_p25;
 
 import android.content.Context;
 import android.content.Intent;
+import android.graphics.Typeface;
 import android.os.Bundle;
 import android.util.AttributeSet;
 import android.util.Log;
@@ -49,22 +50,28 @@ public class ViewRace extends LinearLayout implements View.OnClickListener {
 
     private void init(@Nullable AttributeSet set, final Context context){
 
+        Typeface face = Typeface.create("monospace", Typeface.NORMAL);
         LinearLayout globalLayout = new LinearLayout(getContext());
-        globalLayout.setOrientation(LinearLayout.HORIZONTAL);
-        globalLayout.setGravity(Gravity.CENTER);
+        globalLayout.setPadding(0,0,0,20);
         globalLayout.setLayoutParams(new LinearLayout.LayoutParams(ViewGroup.LayoutParams.MATCH_PARENT,ViewGroup.LayoutParams.WRAP_CONTENT));
+        globalLayout.setGravity(Gravity.CENTER);
+        globalLayout.setOrientation(LinearLayout.HORIZONTAL);
 
-        TextView tvRaceName = new Button(new ContextThemeWrapper(getContext(), R.style.textView), null, 0);
-        tvRaceName.setLayoutParams(new LinearLayout.LayoutParams(300, LinearLayout.LayoutParams.MATCH_PARENT));
+        TextView tvRaceName = new TextView(new ContextThemeWrapper(getContext(), R.style.textView), null, 0);
+        tvRaceName.setTextAppearance(R.style.textView);
+        tvRaceName.setLayoutParams(new LinearLayout.LayoutParams(600, LinearLayout.LayoutParams.MATCH_PARENT));
         tvRaceName.setText(race.getName());
         tvRaceName.setGravity(Gravity.CENTER_VERTICAL);
+        tvRaceName.setTypeface(face);
         globalLayout.addView(tvRaceName);
 
         Button btnRace = new Button(new ContextThemeWrapper(getContext(), R.style.mainActivityButton), null, 0);
-        btnRace.setLayoutParams(new LinearLayout.LayoutParams(175, 45));
+        btnRace.setTextAppearance(R.style.mainActivityButton);
+        btnRace.setLayoutParams(new LinearLayout.LayoutParams(450, 75));
         btnRace.setText(R.string.course_Stats);
         btnRace.setOnClickListener(this);
         btnRace.setTag(race.getIdRace());
+        btnRace.setTypeface(face);
         globalLayout.addView(btnRace);
 
         addView(globalLayout);
