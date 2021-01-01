@@ -8,6 +8,9 @@ import androidx.room.Insert;
 import androidx.room.Query;
 import utbm.lepysidawy.code_p25.entity.ParticipateRace;
 
+/**
+ * DAO used to interact with the ParticipateRace table
+ */
 @Dao
 public interface ParticipateRaceDAO {
 
@@ -46,9 +49,6 @@ public interface ParticipateRaceDAO {
 
     @Insert
     void insert(ParticipateRace participation);
-
-    @Insert
-    void insertAll(ParticipateRace... participation);
 
     @Delete
     void delete(ParticipateRace participation);

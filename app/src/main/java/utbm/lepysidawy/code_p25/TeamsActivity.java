@@ -59,7 +59,6 @@ public class TeamsActivity extends AppCompatActivity {
      * @param view
      */
     public void consultTeam(View view) {
-        //int teamNumber = Character.getNumericValue(this.teams.getSelectedItem().toString().charAt(this.teams.getSelectedItem().toString().length() - 1));
         int teamNumber = Integer.parseInt(this.teams.getSelectedItem().toString().split(" ")[1]);
         Log.d("test",teamNumber + "");
         Intent intent = new Intent(this, TeamActivity.class);

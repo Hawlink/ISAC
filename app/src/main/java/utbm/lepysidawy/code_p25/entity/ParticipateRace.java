@@ -4,6 +4,9 @@ import androidx.room.ColumnInfo;
 import androidx.room.Entity;
 import androidx.room.ForeignKey;
 
+/**
+ * Entity for the ParticipateRace table
+ */
 @Entity(primaryKeys = {"ID_RACE","ID_RUNNER"}, foreignKeys = {@ForeignKey(entity = Race.class, parentColumns = "idRace", childColumns = "ID_RACE"), @ForeignKey(entity = Runner.class, parentColumns = "idPlayer", childColumns = "ID_RUNNER")})
 public class ParticipateRace {
 
@@ -37,32 +40,16 @@ public class ParticipateRace {
         return idRace;
     }
 
-    public void setIdRace(int idRace) {
-        this.idRace = idRace;
-    }
-
     public int getIdRunner() {
         return idRunner;
-    }
-
-    public void setIdRunner(int idRunner) {
-        this.idRunner = idRunner;
     }
 
     public int getTeamNumber() {
         return teamNumber;
     }
 
-    public void setTeamNumber(int teamNumber) {
-        this.teamNumber = teamNumber;
-    }
-
     public int getRunningOrder() {
         return runningOrder;
-    }
-
-    public void setRunningOrder(int runningOrder) {
-        this.runningOrder = runningOrder;
     }
 
     public float getSprint1() {

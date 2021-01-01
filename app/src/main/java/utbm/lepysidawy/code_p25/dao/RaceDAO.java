@@ -9,6 +9,9 @@ import java.util.List;
 
 import utbm.lepysidawy.code_p25.entity.Race;
 
+/**
+ * DAO used to interact with the Race table
+ */
 @Dao
 public interface RaceDAO {
 

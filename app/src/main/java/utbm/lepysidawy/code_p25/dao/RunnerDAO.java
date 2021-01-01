@@ -4,13 +4,14 @@ import androidx.room.Dao;
 import androidx.room.Delete;
 import androidx.room.Insert;
 import androidx.room.Query;
-import androidx.room.RawQuery;
-import androidx.sqlite.db.SupportSQLiteQuery;
 
 import java.util.List;
 
 import utbm.lepysidawy.code_p25.entity.Runner;
 
+/**
+ * DAO used to interact with the Runner table
+ */
 @Dao
 public interface RunnerDAO {
 
@@ -19,9 +20,6 @@ public interface RunnerDAO {
 
     @Query("SELECT * FROM Runner WHERE Runner.idPlayer = :runnerId")
     Runner getRunnerFromId(int runnerId);
-
-    @Query("SELECT * FROM Runner WHERE LEVEL > 50")
-    List<Runner> queryTest();
 
     @Insert
     long[] insertAll(Runner... runner);

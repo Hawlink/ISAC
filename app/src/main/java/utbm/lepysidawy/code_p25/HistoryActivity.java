@@ -4,8 +4,6 @@ import androidx.appcompat.app.AppCompatActivity;
 
 import android.content.Intent;
 import android.os.Bundle;
-import android.telephony.mbms.MbmsErrors;
-import android.util.Log;
 import android.view.View;
 import android.widget.LinearLayout;
 
@@ -16,7 +14,9 @@ import utbm.lepysidawy.code_p25.entity.Race;
 
 public class HistoryActivity extends AppCompatActivity {
 
-
+    /**
+     * Initializes the races views
+     */
     private void initializeView()
     {
         LinearLayout v = findViewById(R.id.history_layout);
@@ -28,7 +28,6 @@ public class HistoryActivity extends AppCompatActivity {
             ViewRace vr = new ViewRace(getApplicationContext(),r, null);
             v.addView(vr);
         }
-
     }
 
     @Override
@@ -46,6 +45,10 @@ public class HistoryActivity extends AppCompatActivity {
         super.finish();
     }
 
+    /**
+     * Method starting the detailed stats history activity
+     * @param view
+     */
     public void detailedStats(View view){
         Intent intent = new Intent(this, DetailedStatsHistoryActivity.class);
         startActivity(intent);

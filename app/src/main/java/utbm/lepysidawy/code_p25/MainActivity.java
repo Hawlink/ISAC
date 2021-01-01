@@ -8,7 +8,6 @@ import android.util.Log;
 import android.view.View;
 
 import java.util.List;
-import java.util.Random;
 
 import utbm.lepysidawy.code_p25.database.AppDatabase;
 import utbm.lepysidawy.code_p25.entity.ParticipateRace;
@@ -29,7 +28,6 @@ public class MainActivity extends AppCompatActivity {
         AppDatabase db = AppDatabase.getInstance(this);
         Log.d("App","Running");
 
-
         List<ParticipateRace> participations = db.participateRaceDAO().getAll();
         for(ParticipateRace p : participations){
             db.participateRaceDAO().delete(p);
@@ -45,22 +43,29 @@ public class MainActivity extends AppCompatActivity {
             db.raceDAO().delete(r);
         }
 
-        Runner wonho = new Runner("Lee","Ho-seok",80);
-        Runner yeojin = new Runner("Lim","Yeojin",40);
-        Runner heejin = new Runner("Jeon","Heejin",90);
-        Runner hyunjin = new Runner("Kim","Hyunjin",95);
-        Runner haseul = new Runner("Cho","Haseul",70);
-        Runner vivi = new Runner("Wong","Ka-Hei",90);
-        Runner yves = new Runner("Ha","Soo Young",75);
-        Runner chuu = new Runner("Kim","Jiwoo",80);
-        Runner choerry = new Runner("Choi","Yerim",78);
+        Runner paulMcCartney = new Runner("Paul","McCartney",80);
+        Runner johnLennon = new Runner("John","Lennon",40);
+        Runner ringoStarr = new Runner("Ringo","Starr",90);
+        Runner georgeHarrison = new Runner("George","Harrison",95);
+        Runner mickJagger = new Runner("Mick","Jagger",70);
+        Runner keithRichards = new Runner("Keith","Richards",90);
+        Runner robertPlant = new Runner("Robert","Plant",75);
+        Runner markKnopfler = new Runner("Mark","Knopfler",80);
+        Runner davidGilmour = new Runner("David","Gilmour",78);
+        Runner liamGallagher = new Runner("Liam","Gallagher",62);
+        Runner noelGallagher = new Runner("Noël","Gallagher",33);
+        Runner thomYorke = new Runner("Thom","Yorke",98);
+        Runner davidBowie = new Runner("David","Bowie",53);
+        Runner louReed = new Runner("Lou","Reed",47);
+        Runner brianWilson = new Runner("Brian","Wilson",22);
 
-        Random rd = new Random();
+        /**Random rd = new Random();
         for(int i = 0; i<30; i++){
             db.runnerDAO().insertAll(new Runner("A" + i, "B"+ i,rd.nextInt(100)));
-        }
+        }**/
 
-        long[] runnerIds = db.runnerDAO().insertAll(wonho,yeojin,heejin, hyunjin, haseul, vivi, yves, chuu, choerry);
+        long[] runnerIds = db.runnerDAO().insertAll(paulMcCartney,johnLennon,ringoStarr, georgeHarrison, mickJagger, keithRichards, robertPlant, markKnopfler, davidGilmour,
+                liamGallagher, noelGallagher, thomYorke, davidBowie, louReed, brianWilson);
     }
 
     public void onRaceCreationClick(View view) {

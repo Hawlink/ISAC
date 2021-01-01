@@ -218,6 +218,13 @@ public class StatsActivity extends AppCompatActivity implements AdapterView.OnIt
         startActivity(intent);
     }
 
+    /**
+     * Method launched when an item is selected in one of the spinners
+     * @param parent
+     * @param view
+     * @param pos
+     * @param id
+     */
     @Override
     public void onItemSelected(AdapterView<?> parent, View view, int pos, long id) {
         Log.i("info", String.valueOf(pos));
@@ -237,7 +244,5 @@ public class StatsActivity extends AppCompatActivity implements AdapterView.OnIt
     }
 
     @Override
-    public void onNothingSelected(AdapterView<?> parent) {
-
-    }
+    public void onNothingSelected(AdapterView<?> parent) {}
 }

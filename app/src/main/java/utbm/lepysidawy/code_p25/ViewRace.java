@@ -5,7 +5,6 @@ import android.content.Intent;
 import android.graphics.Typeface;
 import android.os.Bundle;
 import android.util.AttributeSet;
-import android.util.Log;
 import android.view.ContextThemeWrapper;
 import android.view.Gravity;
 import android.view.View;
@@ -16,10 +15,11 @@ import android.widget.TextView;
 
 import androidx.annotation.Nullable;
 
-import org.w3c.dom.Text;
-
 import utbm.lepysidawy.code_p25.entity.Race;
 
+/**
+ * Specific layout for a race, used for the history activity
+ */
 public class ViewRace extends LinearLayout implements View.OnClickListener {
 
     private Race race;
@@ -48,6 +48,11 @@ public class ViewRace extends LinearLayout implements View.OnClickListener {
 
     }
 
+    /**
+     * Initialization of the view
+     * @param set
+     * @param context
+     */
     private void init(@Nullable AttributeSet set, final Context context){
 
         Typeface face = Typeface.create("monospace", Typeface.NORMAL);
@@ -77,6 +82,10 @@ public class ViewRace extends LinearLayout implements View.OnClickListener {
         addView(globalLayout);
     }
 
+    /**
+     * OnClick method of the view
+     * @param v
+     */
     public void onClick(View v) {
         int raceId = Integer.parseInt(v.getTag().toString());
         Intent intent = new Intent(getContext(), StatsActivity.class);

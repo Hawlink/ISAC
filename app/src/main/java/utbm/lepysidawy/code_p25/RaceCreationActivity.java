@@ -69,7 +69,6 @@ public class RaceCreationActivity extends AppCompatActivity {
 
     /**
      * Method launched when the plus button is clicked
-     * CAN BE IMPROVED BY USING A CUSTOM SUBCLASS OF ARRAYADAPTER TO STORE THE LIST
      */
     public void onPlusClick(View view) {
         if (this.runners.getSelectedItem() != null) {
@@ -156,7 +155,6 @@ public class RaceCreationActivity extends AppCompatActivity {
     private ArrayList<ArrayList<Runner>> copyTeams(ArrayList<ArrayList<Runner>> teams)
     {
         ArrayList<ArrayList<Runner>> res = new ArrayList<ArrayList<Runner>>();
-
         for(int i = 0; i<teams.size(); i++){
             res.add(new ArrayList<Runner>(teams.get(i)));
         }

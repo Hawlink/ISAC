@@ -4,6 +4,9 @@ import androidx.room.ColumnInfo;
 import androidx.room.Entity;
 import androidx.room.PrimaryKey;
 
+/**
+ * Entity for the Race table
+ */
 @Entity
 public class Race {
 
@@ -14,7 +17,6 @@ public class Race {
     private String name;
 
     public Race(String name){
-        //this.idRace = idRace;
         this.name = name;
     }
 

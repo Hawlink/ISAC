@@ -4,6 +4,9 @@ import androidx.room.ColumnInfo;
 import androidx.room.Entity;
 import androidx.room.PrimaryKey;
 
+/**
+ * Entity for the Runner table
+ */
 @Entity
 public class Runner {
 
@@ -20,7 +23,6 @@ public class Runner {
     private int niveau;
 
     public Runner(String firstName, String lastName, int niveau){
-        //this.idPlayer = idPlayer;
         this.firstName = firstName;
         this.lastName = lastName;
         this.niveau = niveau;

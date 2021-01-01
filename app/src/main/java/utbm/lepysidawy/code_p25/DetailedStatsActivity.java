@@ -1,12 +1,10 @@
 package utbm.lepysidawy.code_p25;
 
-import android.content.Intent;
 import android.os.Bundle;
 import android.view.View;
 import android.widget.TextView;
 
 import androidx.appcompat.app.AppCompatActivity;
-import androidx.versionedparcelable.ParcelImpl;
 
 import java.util.ArrayList;
 import java.util.Collections;
@@ -14,11 +12,13 @@ import java.util.Comparator;
 import java.util.List;
 import java.util.Locale;
 
-import utbm.lepysidawy.code_p25.dao.ParticipateRaceDAO;
 import utbm.lepysidawy.code_p25.database.AppDatabase;
 import utbm.lepysidawy.code_p25.entity.ParticipateRace;
 import utbm.lepysidawy.code_p25.entity.Runner;
 
+/**
+ * Class presenting the detailed stats of a race
+ */
 public class DetailedStatsActivity extends AppCompatActivity {
 
     private TextView mTextView;
@@ -27,7 +27,6 @@ public class DetailedStatsActivity extends AppCompatActivity {
 
     private List<ParticipateRace> allParticipations;
     private ArrayList<ArrayList<ParticipateRace>> participationsByTeams = new ArrayList<>();
-
 
     private TextView sprint1;
     private TextView obstacle1;
@@ -44,7 +43,6 @@ public class DetailedStatsActivity extends AppCompatActivity {
     private TextView pitstoprunner;
     private TextView sprint2runner;
     private TextView obstacle2runner;
-
 
     /**
      * Method used to get all the data required for
@@ -84,6 +82,9 @@ public class DetailedStatsActivity extends AppCompatActivity {
         return String.format(Locale.getDefault(), "%d:%02d:%02d", hours, minutes, secs);
     }
 
+    /**
+     * Method used to initialize the stats of a race
+     */
     public void initializeStats(){
         initializeData();
         AppDatabase db = AppDatabase.getInstance(this);
@@ -119,7 +120,6 @@ public class DetailedStatsActivity extends AppCompatActivity {
             pr.setObstacle2(time);
         }
 
-
         Collections.sort(participationsSprint1, new Comparator<ParticipateRace>(){
             public int compare(ParticipateRace p1, ParticipateRace p2) {
                 return Float.compare(p1.getSprint1(), p2.getSprint1());
@@ -145,7 +145,6 @@ public class DetailedStatsActivity extends AppCompatActivity {
                 return Float.compare(p1.getObstacle2(), p2.getObstacle2());
             }
         });
-
 
         ParticipateRace best =  participationsSprint1.get(0);
         this.sprint1.setText(this.convertSecondsToFullTime(best.getSprint1()));
@@ -176,8 +175,6 @@ public class DetailedStatsActivity extends AppCompatActivity {
         this.obstacle2team.setText(Integer.toString(best.getTeamNumber()));
         bestRunner = db.runnerDAO().getRunnerFromId(best.getIdRunner());
         this.obstacle2runner.setText(bestRunner.getFirstName() + " " + bestRunner.getLastName());
-
-
     }
 
     @Override
@@ -202,7 +199,6 @@ public class DetailedStatsActivity extends AppCompatActivity {
         this.pitstoprunner = (TextView) findViewById(R.id.pitstoprunner);
         this.sprint2runner = (TextView) findViewById(R.id.sprint2runner);
         this.obstacle2runner = (TextView) findViewById(R.id.obstacle2runner);
-
 
         Bundle b = getIntent().getExtras();
         this.raceId = -1; // or other values

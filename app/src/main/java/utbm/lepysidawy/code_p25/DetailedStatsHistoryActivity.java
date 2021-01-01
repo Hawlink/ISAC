@@ -1,14 +1,10 @@
 package utbm.lepysidawy.code_p25;
 
-import android.content.Intent;
-import android.graphics.Typeface;
 import android.os.Bundle;
-import android.util.Log;
 import android.view.View;
 import android.widget.TextView;
 
 import androidx.appcompat.app.AppCompatActivity;
-import androidx.versionedparcelable.ParcelImpl;
 
 import java.util.ArrayList;
 import java.util.Collections;
@@ -16,12 +12,14 @@ import java.util.Comparator;
 import java.util.List;
 import java.util.Locale;
 
-import utbm.lepysidawy.code_p25.dao.ParticipateRaceDAO;
 import utbm.lepysidawy.code_p25.database.AppDatabase;
 import utbm.lepysidawy.code_p25.entity.ParticipateRace;
 import utbm.lepysidawy.code_p25.entity.Race;
 import utbm.lepysidawy.code_p25.entity.Runner;
 
+/**
+ * Activity presenting the detailed stats of the history activity
+ */
 public class DetailedStatsHistoryActivity extends AppCompatActivity {
 
     private List<ParticipateRace> allParticipations;
@@ -47,7 +45,6 @@ public class DetailedStatsHistoryActivity extends AppCompatActivity {
     private TextView pitstoprunner;
     private TextView sprint2runner;
     private TextView obstacle2runner;
-
 
     /**
      * Method used to get all the data required for
@@ -89,6 +86,9 @@ public class DetailedStatsHistoryActivity extends AppCompatActivity {
         return String.format(Locale.getDefault(), "%d:%02d:%02d", hours, minutes, secs);
     }
 
+    /**
+     * Method used to initialize the stats of the detailed history activity
+     */
     public void initializeStats(){
         initializeData();
         AppDatabase db = AppDatabase.getInstance(this);
@@ -124,7 +124,6 @@ public class DetailedStatsHistoryActivity extends AppCompatActivity {
             float time = pr.getObstacle2() - db.participateRaceDAO().getParticipationsFromCourseAndTeamNumberAndRunningOrder(pr.getIdRace(),pr.getTeamNumber(),pr.getRunningOrder()).getSprint2();
             pr.setObstacle2(time);
         }
-
 
         Collections.sort(participationsSprint1, new Comparator<ParticipateRace>(){
             public int compare(ParticipateRace p1, ParticipateRace p2) {
@@ -188,7 +187,6 @@ public class DetailedStatsHistoryActivity extends AppCompatActivity {
         bestRunner = db.runnerDAO().getRunnerFromId(best.getIdRunner());
         this.obstacle2runner.setText(bestRunner.getFirstName() + " " + bestRunner.getLastName());
 
-
     }
 
     @Override
@@ -216,7 +214,6 @@ public class DetailedStatsHistoryActivity extends AppCompatActivity {
         this.pitstoprunner = (TextView) findViewById(R.id.pitstoprunner);
         this.sprint2runner = (TextView) findViewById(R.id.sprint2runner);
         this.obstacle2runner = (TextView) findViewById(R.id.obstacle2runner);
-
 
         initializeStats();
     }
