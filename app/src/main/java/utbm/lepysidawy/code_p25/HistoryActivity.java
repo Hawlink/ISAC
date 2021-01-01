@@ -51,6 +51,7 @@ public class HistoryActivity extends AppCompatActivity {
      */
     public void detailedStats(View view){
         Intent intent = new Intent(this, DetailedStatsHistoryActivity.class);
+        intent.addFlags(Intent.FLAG_ACTIVITY_CLEAR_TOP);
         startActivity(intent);
     }
 

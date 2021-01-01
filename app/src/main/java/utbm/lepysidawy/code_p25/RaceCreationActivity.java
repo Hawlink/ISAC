@@ -121,6 +121,7 @@ public class RaceCreationActivity extends AppCompatActivity {
             int raceId = (int)this.createRace(this.courseName.getText().toString());
             this.createTeams(raceId);
             Intent intent = new Intent(this, TeamsActivity.class);
+            intent.addFlags(Intent.FLAG_ACTIVITY_CLEAR_TOP);
             Bundle b = new Bundle();
             b.putInt("raceId", raceId);
             intent.putExtras(b);

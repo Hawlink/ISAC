@@ -203,6 +203,7 @@ public class StatsActivity extends AppCompatActivity implements AdapterView.OnIt
      */
     public void finish (View view) {
         Intent intent = new Intent(this, MainActivity.class);
+        intent.addFlags(Intent.FLAG_ACTIVITY_CLEAR_TOP);
         startActivity(intent);
     }
 
@@ -212,6 +213,7 @@ public class StatsActivity extends AppCompatActivity implements AdapterView.OnIt
      */
     public void detailedStats(View view){
         Intent intent = new Intent(this, DetailedStatsActivity.class);
+        intent.addFlags(Intent.FLAG_ACTIVITY_CLEAR_TOP);
         Bundle b = new Bundle();
         b.putInt("raceId", raceId);
         intent.putExtras(b);
@@ -245,4 +247,7 @@ public class StatsActivity extends AppCompatActivity implements AdapterView.OnIt
 
     @Override
     public void onNothingSelected(AdapterView<?> parent) {}
+
+    @Override
+    public void onBackPressed() {}
 }

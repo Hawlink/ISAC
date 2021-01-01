@@ -62,6 +62,7 @@ public class TeamsActivity extends AppCompatActivity {
         int teamNumber = Integer.parseInt(this.teams.getSelectedItem().toString().split(" ")[1]);
         Log.d("test",teamNumber + "");
         Intent intent = new Intent(this, TeamActivity.class);
+        intent.addFlags(Intent.FLAG_ACTIVITY_CLEAR_TOP);
         Bundle b = new Bundle();
         b.putInt("raceId", this.raceId);
         b.putInt("teamNumber", teamNumber);
@@ -75,9 +76,13 @@ public class TeamsActivity extends AppCompatActivity {
      */
     public void startRace(View view) {
         Intent intent = new Intent(this, RaceActivity.class);
+        intent.addFlags(Intent.FLAG_ACTIVITY_CLEAR_TOP);
         Bundle b = new Bundle();
         b.putInt("raceId", this.raceId);
         intent.putExtras(b);
         startActivity(intent);
     }
+
+    @Override
+    public void onBackPressed() {}
 }

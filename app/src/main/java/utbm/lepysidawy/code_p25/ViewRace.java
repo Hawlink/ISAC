@@ -89,6 +89,7 @@ public class ViewRace extends LinearLayout implements View.OnClickListener {
     public void onClick(View v) {
         int raceId = Integer.parseInt(v.getTag().toString());
         Intent intent = new Intent(getContext(), StatsActivity.class);
+        intent.addFlags(Intent.FLAG_ACTIVITY_CLEAR_TOP);
         Bundle b = new Bundle();
         b.putInt("raceId", raceId);
         intent.putExtras(b);

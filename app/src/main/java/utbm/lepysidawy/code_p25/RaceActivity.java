@@ -335,6 +335,7 @@ public class RaceActivity extends AppCompatActivity {
                     @Override
                     public void onClick(DialogInterface dialogInterface, int i) {
                         Intent intent = new Intent(getBaseContext(), StatsActivity.class);
+                        intent.addFlags(Intent.FLAG_ACTIVITY_CLEAR_TOP);
                         Bundle b = new Bundle();
                         b.putInt("raceId", raceId);
                         intent.putExtras(b);
@@ -343,5 +344,8 @@ public class RaceActivity extends AppCompatActivity {
                 });
         alertDialog.show();
     }
+
+    @Override
+    public void onBackPressed() {}
 
 }

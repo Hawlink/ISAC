@@ -70,16 +70,19 @@ public class MainActivity extends AppCompatActivity {
 
     public void onRaceCreationClick(View view) {
         Intent intent = new Intent(this, RaceCreationActivity.class);
+        intent.addFlags(Intent.FLAG_ACTIVITY_CLEAR_TOP);
         startActivity(intent);
     }
 
     public void onRunnerCreationClick(View view) {
         Intent intent = new Intent(this, RunnerCreationActivity.class);
+        intent.addFlags(Intent.FLAG_ACTIVITY_CLEAR_TOP);
         startActivity(intent);
     }
 
     public void onStatsButtonClick(View view){
         Intent intent = new Intent(this, HistoryActivity.class);
+        intent.addFlags(Intent.FLAG_ACTIVITY_CLEAR_TOP);
         startActivity(intent);
     }
 
