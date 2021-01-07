@@ -28,7 +28,6 @@ public class MainActivity extends AppCompatActivity {
         AppDatabase db = AppDatabase.getInstance(this);
         Log.d("App","Running");
 
-
         List<Runner> runners = db.runnerDAO().getAll();
         if(runners.size() == 0)
         {

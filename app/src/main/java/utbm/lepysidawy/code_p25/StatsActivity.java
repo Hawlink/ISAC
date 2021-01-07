@@ -221,6 +221,19 @@ public class StatsActivity extends AppCompatActivity implements AdapterView.OnIt
     }
 
     /**
+     * Method used to launch the detailed stats activity of the race
+     * @param view
+     */
+    public void ranking(View view){
+        Intent intent = new Intent(this, RankingActivity.class);
+        intent.addFlags(Intent.FLAG_ACTIVITY_CLEAR_TOP);
+        Bundle b = new Bundle();
+        b.putInt("raceId", raceId);
+        intent.putExtras(b);
+        startActivity(intent);
+    }
+
+    /**
      * Method launched when an item is selected in one of the spinners
      * @param parent
      * @param view

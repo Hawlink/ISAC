@@ -38,6 +38,7 @@
     <string name="eleventhTeam">EQUIPE 11</string>
     <string name="twelthTeam">EQUIPE 12</string>
     <string name="course_Stats">STATISTIQUES DE LA COURSE</string>
+    <string name="course_Ranking">CLASSEMENT DE LA COURSE</string>
     <string name="firstObstacle">OBSTACLE 1</string>
     <string name="pitStop">PIT STOP</string>
     <string name="secondSprint">SPRINT 2</string>

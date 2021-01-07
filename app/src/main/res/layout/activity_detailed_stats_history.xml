@@ -108,6 +108,7 @@
                     android:id="@+id/sprint1race"
                     android:layout_height="30dp"
                     android:layout_width="match_parent"
+                    android:textSize="11dp"
                     android:gravity="center"/>
 
                 <TextView
@@ -123,6 +124,7 @@
                     style="@style/textView"
                     android:layout_width="match_parent"
                     android:layout_height="30dp"
+                    android:textSize="11dp"
                     android:gravity="center"
                     android:text="" />
 
@@ -155,6 +157,7 @@
                     android:id="@+id/obstacle1race"
                     android:layout_height="30dp"
                     android:layout_width="match_parent"
+                    android:textSize="11dp"
                     android:gravity="center"/>
 
                 <TextView
@@ -171,6 +174,7 @@
                     android:layout_width="match_parent"
                     android:layout_height="30dp"
                     android:gravity="center"
+                    android:textSize="11dp"
                     android:text="" />
 
                 <TextView
@@ -202,6 +206,7 @@
                     android:id="@+id/pitstoprace"
                     android:layout_height="30dp"
                     android:layout_width="match_parent"
+                    android:textSize="11dp"
                     android:gravity="center"/>
 
                 <TextView
@@ -218,6 +223,7 @@
                     android:layout_width="match_parent"
                     android:layout_height="30dp"
                     android:gravity="center"
+                    android:textSize="11dp"
                     android:text="" />
 
                 <TextView
@@ -249,6 +255,7 @@
                     android:id="@+id/sprint2race"
                     android:layout_height="30dp"
                     android:layout_width="match_parent"
+                    android:textSize="11dp"
                     android:gravity="center"/>
 
                 <TextView
@@ -265,6 +272,7 @@
                     android:layout_width="match_parent"
                     android:layout_height="30dp"
                     android:gravity="center"
+                    android:textSize="11dp"
                     android:text="" />
 
                 <TextView
@@ -295,6 +303,7 @@
                     android:id="@+id/obstacle2race"
                     android:layout_height="30dp"
                     android:layout_width="match_parent"
+                    android:textSize="11dp"
                     android:gravity="center"/>
 
                 <TextView
@@ -311,6 +320,7 @@
                     android:layout_width="match_parent"
                     android:layout_height="30dp"
                     android:gravity="center"
+                    android:textSize="11dp"
                     android:text="" />
 
                 <TextView

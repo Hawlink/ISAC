@@ -31,6 +31,14 @@
                 android:text="@string/detailedStats"
                 android:onClick="detailedStats"/>
 
+            <Button
+                android:id="@+id/ranking"
+                android:layout_height="75dp"
+                android:layout_width="150dp"
+                style="@style/mainActivityButton"
+                android:text="@string/course_Ranking"
+                android:onClick="ranking"/>
+
         </LinearLayout>
 
         <LinearLayout
