@@ -1,0 +1,52 @@
+1) - Présentation (1 min) - 36 sec
+Bonjour et bienvenue à tous pour cette soutenance de LO52. Nous allons aujourd'hui
+vous présenter le projet que nous avons réalisé ces derniers mois, une application mobile
+sous le système d'exploitation Android.
+
+Cette présentation se déroulera en plusieurs parties. Dans un premier temps, nous
+présenterons les besoins du client pour cette application. Nous présenterons ensuite notre organisation personnelle
+relative aux différentes tâches à réaliser pour le projet. Une troisième partie sera rapidement consacrée aux maquettes
+que nous avons réalisées en amont. Nous présenterons ensuite notre modèle de données avant de procéder à une démonstration
+de l'application. Enfin, nous nous attarderons sur quelques points techniques intéressants vis-à-vis du projet et sur les 
+améliorations qui seraient possibles.
+
+3) - Organisation (1 min) - 46 sec
+Pour ce qui est de notre organisation lors de ce projet, nous avons utilisé l'outil de gestion de projet en ligne Trello.
+Ce dernier permet de lister différentes tâches à réaliser pour un projet et de les séparer en différentes listes : tâches à faire,
+tâches en cours, ou encore tâches réalisées. Nous avions au départ prévu de nous séparer les parties back et front de l'application, 
+Nicolas étant chargé de travailler sur la partie back et moi sur la partie front ; en gros il devait travailler sur la base de données
+et sur les activités tandis que je travaillerai sur les XML des activités. Au final, la répartition des tâches n'a pas été aussi stricte, notamment car on
+travaillait aussi ensemble sur une autre UV et du coup la charge de travail de Nicolas a été un peu allégée sur ce projet-ci. On a quand même
+maintenu un suivi régulier et cohérent des différentes tâches à réaliser sur l'application.
+
+4) Maquettes (1 min) - 27 sec
+Avant tout développement, nous avons commencé par effectuer des maquettes de l'application avec Microsoft Word. Donc c'était des maquettes assez simplistes ayant
+surtout pour but de voir comment on pourrait transcrire les différentes fonctionnalités avant de se lancer dans le bain du développement. Sur la slide, on peut voir
+en miniature les maquettes de l'écran d'accueil, de l'écran de création de course et de l'écran d'équipe, cette dernière permettant de changer l'ordre des coureurs dans 
+une équipe.
+
+5) Démo (3 min) - 4m18 s
+Nous allons désormais procéder à une petite démonstration de l'application 
+afin de mieux comprendre son utilisation tout simplement.
+On arrive sur l'écran d'accueil de l'application avec 4 boutons : créer course, créer coureur, statistiques qui permet d'accéder à l'historique 
+de l'application et quitter.
+On va commencer par créer un coureur : 
+donc on rentre son prénom, son nom et son niveau entre 1 et 100 puis on valide, il est donc ajouté à la bd.
+On va ensuite créer la course donc on peut choisir le nom de la course. 
+On peut ensuite choisir des participants : on a une liste de participants disponibles dans la liste de gauche, la liste de droite correspond aux coureurs de la course. 
+Là on voit qu'on a pas ajouté assez de coureurs vu qu'il nous faut suffisamment de coureurs pour remplir toutes les équipes donc un multiple de 3, l'application nous le signale.
+On arrive sur l'écran des équipes qui ont été réparties de façon équilibrée. On consulte l'équipe 1, l'ordre des participants est de haut en bas. Il est possible de changer l'ordre
+des participants avec les flèches.
+On arrive sur l'écran de course, chaque rectangle correspond à une équipe. On lance le chrono et on fait passer les différentes étapes pour les coureurs.
+On termine le chrono et on arrive sur l'écran des stats. On peut voir les temps de chaque étape pour chaque coureur.
+En cliquant sur statistiques détaillées on peut voir le meilleur temps par épreuve.
+On retourne à l'écran d'accueil et on peut voir l'historique des courses en cliquant sur statistiques. On a encore une fois les statistiques de la course comme on a pu le voir juste avant.
+En cliquant sur stats détaillées on a en plus le meilleur temps par épreuve et par course. 
+
+6) Points techniques (1 min) - 40 sec
+Nous avions également réfléchi à un point technique qui consisterait en une éventuelle couche intermédiaire entre les activités et les DAO de l'application. En l'état, les 
+activités communiquent directement avec les DAO ; nous nous sommes demandés si c'était un problème. Nous avons par la suite constaté qu'il était possible 
+d'utiliser un composant ViewModel pour préparer les données, chose qui aurait pu être faite du coup.
+
+
+
